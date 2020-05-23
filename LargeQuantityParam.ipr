@@ -186,6 +186,9 @@
     <option name="customVMPath" />
     <option name="maximumHeapSize" value="2048" />
   </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
   <component name="libraryTable">
     <library name="jackson">
       <CLASSES>

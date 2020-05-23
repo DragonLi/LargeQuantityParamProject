@@ -63,9 +63,9 @@ public class CemQueryParamCfg {
                 break;
             case OrMultipartAnd:{
                 for (int i = 0; i < valCount; i++) {
-                    processOneParameter(buffer, values.get(i));
                     if (i != 0)
                         buffer.append(" or ");
+                    processOneParameter(buffer, values.get(i));
                 }
             }
                 break;

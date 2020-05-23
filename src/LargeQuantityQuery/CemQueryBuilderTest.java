@@ -12,6 +12,8 @@ import org.junit.Test;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -50,6 +52,7 @@ public class CemQueryBuilderTest {
             XSSFRow row = sheet.getRow(i);
             CemQueryParamCfg cfg = new CemQueryParamCfg();
             cfgLst[i-1] = cfg;
+            String requiredCnt = null;
             for (int j = 0; j < indexLst.length; j++) {
                 int targetIndex = indexLst[j];
                 XSSFCell cell = row.getCell(targetIndex);
@@ -64,6 +67,8 @@ public class CemQueryBuilderTest {
                     case 1:{
                         String cnt = cell.getStringCellValue();
                         cfg.isRequired=!cnt.equals("否");
+                        if (cfg.isRequired)
+                            requiredCnt = cnt;
                         break;
                     }
                     case 2:{
@@ -80,17 +85,20 @@ public class CemQueryBuilderTest {
                             Matcher match;
                             if ((match=abovePat.matcher(rawPred)).find()){
                                 AboveValuePredicate above = new AboveValuePredicate();
-                                above.lowBound = match.group(1);
                                 cfg.valueMap[k]=above;
+                                above.lowBound = match.group(1);
                             }else if ((match=rangePat.matcher(rawPred)).find()){
                                 RangePredicate range = new RangePredicate();
+                                cfg.valueMap[k]=range;
                                 range.lowBound=match.group(1);
                                 range.upBound=match.group(2);
-                                cfg.valueMap[k]=range;
                             }else{
                                 EqualValuePredicate eq = new EqualValuePredicate();
-                                eq.eqVal=rawPred;
                                 cfg.valueMap[k]=eq;
+                                eq.eqVal=rawPred;
+                                if (rawPred.indexOf('-') != -1){
+                                    throw new RuntimeException("non range value should not contains \"-\", or range value must be numbers");
+                                }
                             }
                         }
                         break;
@@ -114,6 +122,7 @@ public class CemQueryBuilderTest {
                     }
                 }
             }
+            CheckRequired(cfg,requiredCnt);
         }
 
         for (CemQueryParamCfg cfg : cfgLst) {
@@ -122,9 +131,70 @@ public class CemQueryBuilderTest {
 
         ObjectMapper json = CemQueryParamManager.getQueryJsonHelper();
         WriteJson(json, cfgLst,"SatParamConfig.json");
+        System.out.println("SatParamConfig.json written");
         CemQueryParamManager mgr = new CemQueryParamManager();
         mgr.init();
         System.out.println("finished");
+        /**
+         * TODO
+         * 1 多选参数重复
+         * 2 多选参数顺序和覆盖检查
+         * 3 多选参数组合时分段的合并
+         * 4 测试:多选参数重复,顺序,边缘重叠和覆盖等(CemQueryNumValOverlap); 默认参数设置;多选参数组合时分段的合并
+         */
+    }
+
+    private static void CheckRequired(CemQueryParamCfg cfg, String requiredCnt) {
+        if (cfg.valueMap.length == 0){
+            throw new RuntimeException("no value list found!"+cfg);
+        }
+
+        ValuePredicate[] valueMap = cfg.valueMap;
+        HashSet<ValuePredicate> testSet = new HashSet<>(valueMap.length);
+        for (ValuePredicate predicate : valueMap) {
+            if (testSet.contains(predicate)){
+                throw new RuntimeException("duplicated choice: "+cfg);
+            }
+            if (!predicate.checkRange())
+                throw new RuntimeException("invalid range bound:"+cfg);
+
+            testSet.add(predicate);
+        }
+
+        ValuePredicate merged = valueMap[0];
+        for (int i = 1; i < valueMap.length; i++) {
+            ValuePredicate other = valueMap[i];
+            CemQueryNumValOverlap overlap = merged.testMergedWith(other);
+            switch (overlap){
+                case Normal:
+                    break;
+                case EdgeOverlap:
+                    if (other instanceof RangePredicate){
+                        System.out.println("range bound is overlap, will be adjusted:"+cfg);
+                        other.increaseLowerBoundNumber();
+                        break;
+                    }else
+                        throw new RuntimeException("value range bound is overlap but failed to adjust:" + cfg);
+                case Overlap:
+                    throw new RuntimeException("range overlap:"+cfg);
+                case OutOfOrder:
+                    throw new RuntimeException("values are not in order:"+cfg);
+                case MixedNumWithStr:
+                    throw new RuntimeException("mixing number choice with string choice is not supported:"+cfg);
+            }
+            merged = other;
+        }
+
+        if (cfg.isRequired){
+            boolean hasReq = Arrays.stream(cfg.valueMap).anyMatch(predicate ->
+                    predicate.containsVal(requiredCnt));
+            if (!hasReq){
+                throw new RuntimeException("default value is not described!\n"+cfg);
+            }
+            if (!cfg.valueMap[0].containsVal(requiredCnt)){
+                throw new RuntimeException("default value must be the first choice!\n"+cfg);
+            }
+        }
     }
 
     @Test

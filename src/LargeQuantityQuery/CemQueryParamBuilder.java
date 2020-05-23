@@ -47,6 +47,8 @@ public class CemQueryParamBuilder {
             }
             processedParamLst.set(ind);
             CemQueryParamCfg cfg = satParamList[ind];
+            if (i != 0)
+                buffer.append(" and ");
             cfg.CheckAndCompose(param, buffer);
         }
         for (int ind : requiredFieldIndLst) {
