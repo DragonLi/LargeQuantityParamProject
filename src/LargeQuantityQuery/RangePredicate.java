@@ -1,5 +1,7 @@
 package LargeQuantityQuery;
 
+import static LargeQuantityQuery.CemQueryNumValOverlap.*;
+
 public class RangePredicate extends ValuePredicate {
     public String lowBound;
     public String upBound;
@@ -28,17 +30,52 @@ public class RangePredicate extends ValuePredicate {
 
     @Override
     protected CemQueryNumValOverlap testOverlap(EqualValuePredicate left) {
-        return null;
+        //Normal,EdgeOverlap,Overlap,OutOfOrder,MixedNumWithStr
+        int leftOp;
+        try{
+            leftOp=Integer.parseInt(left.eqVal);
+        }catch (NumberFormatException ex){
+            return MixedNumWithStr;
+        }
+
+        int low = Integer.parseInt(lowBound);
+        if (leftOp == low)
+            return EdgeOverlap;
+
+        int high = Integer.parseInt(upBound);
+        if (high >= leftOp && leftOp > low)
+            return Overlap;
+        if (leftOp > high)
+            return OutOfOrder;
+
+        return Normal;
     }
 
     @Override
     protected CemQueryNumValOverlap testOverlap(RangePredicate left) {
-        return null;
+        //Normal,EdgeOverlap,Overlap,OutOfOrder
+        int leftLow = Integer.parseInt(left.lowBound);
+        int leftHigh = Integer.parseInt(left.upBound);
+        int rightLow = Integer.parseInt(lowBound);
+        int rightHigh= Integer.parseInt(upBound);
+        if (leftHigh < rightLow)
+            return Normal;
+        if (leftHigh == rightLow)
+            return EdgeOverlap;
+        if (rightHigh < leftLow)
+            return OutOfOrder;
+        //leftHigh > rightLow && leftLow <= rightHigh
+        return Overlap;
     }
 
     @Override
     protected CemQueryNumValOverlap testOverlap(AboveValuePredicate left) {
-        return null;
+        //Overlap,OutOfOrder
+        int leftLow = Integer.parseInt(left.lowBound);
+        int rightHigh= Integer.parseInt(upBound);
+        if (rightHigh<=leftLow)
+            return OutOfOrder;
+        return Overlap;
     }
 
     @Override
@@ -54,8 +91,8 @@ public class RangePredicate extends ValuePredicate {
 
     @Override
     public void increaseLowerBoundNumber() {
-        int low = Integer.valueOf(lowBound);
-        int high = Integer.valueOf(upBound);
+        int low = Integer.parseInt(lowBound);
+        int high = Integer.parseInt(upBound);
         if (low < high){
             lowBound = String.valueOf(low+1);
             return;
@@ -65,8 +102,22 @@ public class RangePredicate extends ValuePredicate {
 
     @Override
     public boolean checkRange() {
-        int low = Integer.valueOf(lowBound);
-        int high = Integer.valueOf(upBound);
+        int low = Integer.parseInt(lowBound);
+        int high = Integer.parseInt(upBound);
         return low<=high;
+    }
+
+    @Override
+    public boolean isCollapsed() {
+        int low = Integer.parseInt(lowBound);
+        int high = Integer.parseInt(upBound);
+        return low == high;
+    }
+
+    @Override
+    public ValuePredicate collapse() {
+        EqualValuePredicate result = new EqualValuePredicate();
+        result.eqVal = lowBound;
+        return result;
     }
 }

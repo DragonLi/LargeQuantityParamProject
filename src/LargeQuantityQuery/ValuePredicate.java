@@ -25,4 +25,12 @@ public abstract class ValuePredicate {
     public abstract void increaseLowerBoundNumber();
 
     public abstract boolean checkRange();
+
+    public boolean isCollapsed(){
+        return false;
+    }
+
+    public ValuePredicate collapse(){
+        return this;
+    }
 }

@@ -313,11 +313,11 @@
     "eqVal" : "0"
   }, {
     "typeTag" : "range",
-    "lowBound" : "0",
+    "lowBound" : "1",
     "upBound" : "10"
   }, {
     "typeTag" : "range",
-    "lowBound" : "10",
+    "lowBound" : "11",
     "upBound" : "30"
   }, {
     "typeTag" : "above",
@@ -333,7 +333,7 @@
     "upBound" : "10"
   }, {
     "typeTag" : "range",
-    "lowBound" : "10",
+    "lowBound" : "11",
     "upBound" : "30"
   }, {
     "typeTag" : "above",
@@ -349,19 +349,19 @@
     "upBound" : "30"
   }, {
     "typeTag" : "range",
-    "lowBound" : "30",
+    "lowBound" : "31",
     "upBound" : "60"
   }, {
     "typeTag" : "range",
-    "lowBound" : "60",
+    "lowBound" : "61",
     "upBound" : "90"
   }, {
     "typeTag" : "range",
-    "lowBound" : "90",
+    "lowBound" : "91",
     "upBound" : "120"
   }, {
     "typeTag" : "range",
-    "lowBound" : "120",
+    "lowBound" : "121",
     "upBound" : "180"
   }, {
     "typeTag" : "above",
@@ -404,19 +404,19 @@
     "eqVal" : "0"
   }, {
     "typeTag" : "range",
-    "lowBound" : "0",
+    "lowBound" : "1",
     "upBound" : "10"
   }, {
     "typeTag" : "range",
-    "lowBound" : "10",
+    "lowBound" : "11",
     "upBound" : "20"
   }, {
     "typeTag" : "range",
-    "lowBound" : "20",
+    "lowBound" : "21",
     "upBound" : "30"
   }, {
     "typeTag" : "range",
-    "lowBound" : "30",
+    "lowBound" : "31",
     "upBound" : "50"
   }, {
     "typeTag" : "above",
@@ -431,15 +431,15 @@
     "eqVal" : "0"
   }, {
     "typeTag" : "range",
-    "lowBound" : "0",
+    "lowBound" : "1",
     "upBound" : "10"
   }, {
     "typeTag" : "range",
-    "lowBound" : "10",
+    "lowBound" : "11",
     "upBound" : "20"
   }, {
     "typeTag" : "range",
-    "lowBound" : "20",
+    "lowBound" : "21",
     "upBound" : "30"
   }, {
     "typeTag" : "above",
@@ -455,19 +455,19 @@
     "upBound" : "40"
   }, {
     "typeTag" : "range",
-    "lowBound" : "40",
+    "lowBound" : "41",
     "upBound" : "80"
   }, {
     "typeTag" : "range",
-    "lowBound" : "80",
+    "lowBound" : "81",
     "upBound" : "120"
   }, {
     "typeTag" : "range",
-    "lowBound" : "120",
+    "lowBound" : "121",
     "upBound" : "160"
   }, {
     "typeTag" : "range",
-    "lowBound" : "160",
+    "lowBound" : "161",
     "upBound" : "200"
   }, {
     "typeTag" : "above",
@@ -483,19 +483,19 @@
     "upBound" : "30"
   }, {
     "typeTag" : "range",
-    "lowBound" : "30",
+    "lowBound" : "31",
     "upBound" : "200"
   }, {
     "typeTag" : "range",
-    "lowBound" : "200",
+    "lowBound" : "201",
     "upBound" : "300"
   }, {
     "typeTag" : "range",
-    "lowBound" : "300",
+    "lowBound" : "301",
     "upBound" : "500"
   }, {
     "typeTag" : "range",
-    "lowBound" : "500",
+    "lowBound" : "501",
     "upBound" : "800"
   }, {
     "typeTag" : "above",
@@ -511,19 +511,19 @@
     "upBound" : "1"
   }, {
     "typeTag" : "range",
-    "lowBound" : "1",
+    "lowBound" : "2",
     "upBound" : "10"
   }, {
     "typeTag" : "range",
-    "lowBound" : "10",
+    "lowBound" : "11",
     "upBound" : "30"
   }, {
     "typeTag" : "range",
-    "lowBound" : "30",
+    "lowBound" : "31",
     "upBound" : "40"
   }, {
     "typeTag" : "range",
-    "lowBound" : "40",
+    "lowBound" : "41",
     "upBound" : "50"
   }, {
     "typeTag" : "above",
@@ -587,19 +587,19 @@
     "eqVal" : "0"
   }, {
     "typeTag" : "range",
-    "lowBound" : "0",
+    "lowBound" : "1",
     "upBound" : "100"
   }, {
     "typeTag" : "range",
-    "lowBound" : "100",
+    "lowBound" : "101",
     "upBound" : "300"
   }, {
     "typeTag" : "range",
-    "lowBound" : "300",
+    "lowBound" : "301",
     "upBound" : "600"
   }, {
     "typeTag" : "range",
-    "lowBound" : "600",
+    "lowBound" : "601",
     "upBound" : "1000"
   }, {
     "typeTag" : "above",
@@ -614,19 +614,19 @@
     "eqVal" : "0"
   }, {
     "typeTag" : "range",
-    "lowBound" : "0",
+    "lowBound" : "1",
     "upBound" : "60"
   }, {
     "typeTag" : "range",
-    "lowBound" : "60",
+    "lowBound" : "61",
     "upBound" : "120"
   }, {
     "typeTag" : "range",
-    "lowBound" : "120",
+    "lowBound" : "121",
     "upBound" : "180"
   }, {
     "typeTag" : "range",
-    "lowBound" : "180",
+    "lowBound" : "181",
     "upBound" : "240"
   }, {
     "typeTag" : "above",
@@ -664,19 +664,19 @@
     "eqVal" : "0"
   }, {
     "typeTag" : "range",
-    "lowBound" : "0",
+    "lowBound" : "1",
     "upBound" : "15"
   }, {
     "typeTag" : "range",
-    "lowBound" : "15",
+    "lowBound" : "16",
     "upBound" : "30"
   }, {
     "typeTag" : "range",
-    "lowBound" : "30",
+    "lowBound" : "31",
     "upBound" : "45"
   }, {
     "typeTag" : "range",
-    "lowBound" : "45",
+    "lowBound" : "46",
     "upBound" : "60"
   }, {
     "typeTag" : "above",
@@ -691,19 +691,19 @@
     "eqVal" : "0"
   }, {
     "typeTag" : "range",
-    "lowBound" : "0",
+    "lowBound" : "1",
     "upBound" : "60"
   }, {
     "typeTag" : "range",
-    "lowBound" : "60",
+    "lowBound" : "61",
     "upBound" : "120"
   }, {
     "typeTag" : "range",
-    "lowBound" : "120",
+    "lowBound" : "121",
     "upBound" : "180"
   }, {
     "typeTag" : "range",
-    "lowBound" : "180",
+    "lowBound" : "181",
     "upBound" : "240"
   }, {
     "typeTag" : "above",
@@ -945,19 +945,19 @@
     "upBound" : "1"
   }, {
     "typeTag" : "range",
-    "lowBound" : "1",
+    "lowBound" : "2",
     "upBound" : "5"
   }, {
     "typeTag" : "range",
-    "lowBound" : "5",
+    "lowBound" : "6",
     "upBound" : "10"
   }, {
     "typeTag" : "range",
-    "lowBound" : "10",
+    "lowBound" : "11",
     "upBound" : "15"
   }, {
     "typeTag" : "range",
-    "lowBound" : "15",
+    "lowBound" : "16",
     "upBound" : "20"
   }, {
     "typeTag" : "above",
@@ -973,19 +973,19 @@
     "upBound" : "1"
   }, {
     "typeTag" : "range",
-    "lowBound" : "1",
+    "lowBound" : "2",
     "upBound" : "5"
   }, {
     "typeTag" : "range",
-    "lowBound" : "5",
+    "lowBound" : "6",
     "upBound" : "10"
   }, {
     "typeTag" : "range",
-    "lowBound" : "10",
+    "lowBound" : "11",
     "upBound" : "20"
   }, {
     "typeTag" : "range",
-    "lowBound" : "20",
+    "lowBound" : "21",
     "upBound" : "40"
   }, {
     "typeTag" : "above",
@@ -1000,20 +1000,19 @@
     "lowBound" : "0",
     "upBound" : "1"
   }, {
-    "typeTag" : "range",
-    "lowBound" : "1",
-    "upBound" : "2"
+    "typeTag" : "eq",
+    "eqVal" : "2"
   }, {
     "typeTag" : "range",
-    "lowBound" : "2",
+    "lowBound" : "3",
     "upBound" : "5"
   }, {
     "typeTag" : "range",
-    "lowBound" : "5",
+    "lowBound" : "6",
     "upBound" : "10"
   }, {
     "typeTag" : "range",
-    "lowBound" : "10",
+    "lowBound" : "11",
     "upBound" : "20"
   }, {
     "typeTag" : "above",
@@ -1028,20 +1027,19 @@
     "lowBound" : "0",
     "upBound" : "1"
   }, {
-    "typeTag" : "range",
-    "lowBound" : "1",
-    "upBound" : "2"
+    "typeTag" : "eq",
+    "eqVal" : "2"
   }, {
     "typeTag" : "range",
-    "lowBound" : "2",
+    "lowBound" : "3",
     "upBound" : "5"
   }, {
     "typeTag" : "range",
-    "lowBound" : "5",
+    "lowBound" : "6",
     "upBound" : "10"
   }, {
     "typeTag" : "range",
-    "lowBound" : "10",
+    "lowBound" : "11",
     "upBound" : "20"
   }, {
     "typeTag" : "above",
@@ -1057,19 +1055,19 @@
     "upBound" : "1"
   }, {
     "typeTag" : "range",
-    "lowBound" : "1",
+    "lowBound" : "2",
     "upBound" : "5"
   }, {
     "typeTag" : "range",
-    "lowBound" : "5",
+    "lowBound" : "6",
     "upBound" : "10"
   }, {
     "typeTag" : "range",
-    "lowBound" : "10",
+    "lowBound" : "11",
     "upBound" : "20"
   }, {
     "typeTag" : "range",
-    "lowBound" : "20",
+    "lowBound" : "21",
     "upBound" : "40"
   }, {
     "typeTag" : "above",
@@ -1085,19 +1083,19 @@
     "upBound" : "1"
   }, {
     "typeTag" : "range",
-    "lowBound" : "1",
+    "lowBound" : "2",
     "upBound" : "5"
   }, {
     "typeTag" : "range",
-    "lowBound" : "5",
+    "lowBound" : "6",
     "upBound" : "10"
   }, {
     "typeTag" : "range",
-    "lowBound" : "10",
+    "lowBound" : "11",
     "upBound" : "20"
   }, {
     "typeTag" : "range",
-    "lowBound" : "20",
+    "lowBound" : "21",
     "upBound" : "40"
   }, {
     "typeTag" : "above",
@@ -1113,19 +1111,19 @@
     "upBound" : "1"
   }, {
     "typeTag" : "range",
-    "lowBound" : "1",
+    "lowBound" : "2",
     "upBound" : "5"
   }, {
     "typeTag" : "range",
-    "lowBound" : "5",
+    "lowBound" : "6",
     "upBound" : "10"
   }, {
     "typeTag" : "range",
-    "lowBound" : "10",
+    "lowBound" : "11",
     "upBound" : "20"
   }, {
     "typeTag" : "range",
-    "lowBound" : "20",
+    "lowBound" : "21",
     "upBound" : "40"
   }, {
     "typeTag" : "above",
@@ -1140,20 +1138,19 @@
     "lowBound" : "0",
     "upBound" : "1"
   }, {
-    "typeTag" : "range",
-    "lowBound" : "1",
-    "upBound" : "2"
+    "typeTag" : "eq",
+    "eqVal" : "2"
   }, {
     "typeTag" : "range",
-    "lowBound" : "2",
+    "lowBound" : "3",
     "upBound" : "5"
   }, {
     "typeTag" : "range",
-    "lowBound" : "5",
+    "lowBound" : "6",
     "upBound" : "10"
   }, {
     "typeTag" : "range",
-    "lowBound" : "10",
+    "lowBound" : "11",
     "upBound" : "20"
   }, {
     "typeTag" : "above",

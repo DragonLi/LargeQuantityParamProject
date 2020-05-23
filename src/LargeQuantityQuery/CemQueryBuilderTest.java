@@ -31,7 +31,10 @@ public class CemQueryBuilderTest {
             nameLst[3]="字段分段";
             nameLst[4]="字段间的值";
         }
-        int[] indexLst = new int[5];
+        int[] indexLst = new int[nameLst.length];
+        for (int i = 0; i < indexLst.length; i++) {
+            indexLst[i]=-1;
+        }
         XSSFRow headerRow = sheet.getRow(0);
         for (Cell cell : headerRow) {
             String cnt = cell.getStringCellValue();
@@ -39,8 +42,13 @@ public class CemQueryBuilderTest {
                 String targetName = nameLst[i];
                 if (targetName.equals(cnt)) {
                     indexLst[i]=cell.getColumnIndex();
+                    break;
                 }
             }
+        }
+        for (int i = 0; i < indexLst.length; i++) {
+            if (-1 == indexLst[i])
+                throw new RuntimeException("required field not found: "+nameLst[i]);
         }
 
         Pattern rangePat = Pattern.compile("(\\d+)\\-(\\d+)");
@@ -125,6 +133,7 @@ public class CemQueryBuilderTest {
             CheckRequired(cfg,requiredCnt);
         }
 
+        System.out.println("load excel finished");
         for (CemQueryParamCfg cfg : cfgLst) {
             System.out.println(cfg);
         }
@@ -137,7 +146,6 @@ public class CemQueryBuilderTest {
         System.out.println("finished");
         /**
          * TODO
-         * 1 多选参数重复
          * 2 多选参数顺序和覆盖检查
          * 3 多选参数组合时分段的合并
          * 4 测试:多选参数重复,顺序,边缘重叠和覆盖等(CemQueryNumValOverlap); 默认参数设置;多选参数组合时分段的合并
@@ -170,8 +178,12 @@ public class CemQueryBuilderTest {
                     break;
                 case EdgeOverlap:
                     if (other instanceof RangePredicate){
-                        System.out.println("range bound is overlap, will be adjusted:"+cfg);
+                        System.out.println("range bound is overlap: "+merged+";"+other+" will be adjusted:"+cfg);
                         other.increaseLowerBoundNumber();
+                        if (other.isCollapsed())
+                        {
+                            valueMap[i] = other = other.collapse();
+                        }
                         break;
                     }else
                         throw new RuntimeException("value range bound is overlap but failed to adjust:" + cfg);

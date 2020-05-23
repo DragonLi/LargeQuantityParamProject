@@ -12,7 +12,7 @@ public class EqualValuePredicate extends ValuePredicate {
 
     @Override
     public void generateCondition(String dbFieldName, StringBuffer buffer) {
-        buffer.append(dbFieldName).append(" = '").append(eqVal);
+        buffer.append(dbFieldName).append(" = '").append(eqVal).append("'");
     }
 
     @Override
@@ -29,16 +29,16 @@ public class EqualValuePredicate extends ValuePredicate {
     protected CemQueryNumValOverlap testOverlap(EqualValuePredicate left) {
         //Normal,EdgeOverlap,OutOfOrder,MixedNumWithStr
         if (this.eqVal.equals(left.eqVal)){
-            return EdgeOverlap;
+            return Overlap;
         }
         int rightOp=Integer.MIN_VALUE,leftOp=Integer.MIN_VALUE;
         try{
-            rightOp=Integer.valueOf(eqVal);
-        }catch (NumberFormatException ex){
+            rightOp=Integer.parseInt(eqVal);
+        }catch (NumberFormatException ignored){
         }
         try{
-            leftOp = Integer.valueOf(left.eqVal);
-        }catch (NumberFormatException ex){
+            leftOp = Integer.parseInt(left.eqVal);
+        }catch (NumberFormatException ignored){
         }
         if (rightOp != Integer.MIN_VALUE && leftOp != Integer.MIN_VALUE){
             if (leftOp > rightOp)
@@ -56,12 +56,12 @@ public class EqualValuePredicate extends ValuePredicate {
         //Normal,OutOfOrder,MixedNumWithStr
         int rightOp;
         try{
-            rightOp=Integer.valueOf(eqVal);
+            rightOp=Integer.parseInt(eqVal);
         }catch (NumberFormatException ex){
             return MixedNumWithStr;
         }
 
-        int high = Integer.valueOf(left.upBound);
+        int high = Integer.parseInt(left.upBound);
         if (high >= rightOp)
             return OutOfOrder;
         return Normal;
@@ -72,11 +72,11 @@ public class EqualValuePredicate extends ValuePredicate {
         //Overlap,OutOfOrder,MixedNumWithStr
         int rightOp;
         try{
-            rightOp=Integer.valueOf(eqVal);
+            rightOp=Integer.parseInt(eqVal);
         }catch (NumberFormatException ex){
             return MixedNumWithStr;
         }
-        int leftOp = Integer.valueOf(left.lowBound);
+        int leftOp = Integer.parseInt(left.lowBound);
         if (leftOp < rightOp)
             return Overlap;
 
