@@ -1,0 +1,1181 @@
+[ {
+  "name" : "gender",
+  "dbFieldName" : "sex",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "男"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "女"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "age",
+  "dbFieldName" : "age",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "19"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "20",
+    "upBound" : "40"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "41",
+    "upBound" : "60"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "60"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "star_level",
+  "dbFieldName" : "star_level",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "1"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "2"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "3"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "4"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "5"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "5"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "deptflag",
+  "dbFieldName" : "deptflag",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "城区"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "乡镇"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "农村"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "is_school",
+  "dbFieldName" : "is_school",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "zdw_is_user",
+  "dbFieldName" : "zdw_is_user",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "is_arreas",
+  "dbFieldName" : "is_arreas",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "pri_is_bxl",
+  "dbFieldName" : "pri_is_bxl",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "is_hyj",
+  "dbFieldName" : "is_hyj",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "is_5g_term",
+  "dbFieldName" : "is_5g_term",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "qianyue06",
+  "dbFieldName" : "qianyue06",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "mobh_f",
+  "dbFieldName" : "mobh_f",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "term_brand",
+  "dbFieldName" : "term_brand",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "苹果"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "华为"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "oppo"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "vivo"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "小米"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "其他"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "jiatdh_f",
+  "dbFieldName" : "jiatdh_f",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "family_act",
+  "dbFieldName" : "family_act",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "is_group_member",
+  "dbFieldName" : "is_group_member",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "gxqllgx_f",
+  "dbFieldName" : "gxqllgx_f",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "g4gongx_f",
+  "dbFieldName" : "g4gongx_f",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "yunqx_f",
+  "dbFieldName" : "yunqx_f",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "jitdh_f",
+  "dbFieldName" : "jitdh_f",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "tongf_f",
+  "dbFieldName" : "tongf_f",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "hejy_f",
+  "dbFieldName" : "hejy_f",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "total_value",
+  "dbFieldName" : "total_value",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "38"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "39",
+    "upBound" : "58"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "59",
+    "upBound" : "68"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "69",
+    "upBound" : "98"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "99",
+    "upBound" : "168"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "168"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "fee_extra_mou",
+  "dbFieldName" : "fee_extra_mou",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "10",
+    "upBound" : "30"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "30"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "call_cost",
+  "dbFieldName" : "call_cost",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "10",
+    "upBound" : "30"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "30"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "traffic_cost",
+  "dbFieldName" : "traffic_cost",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "30"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "30",
+    "upBound" : "60"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "60",
+    "upBound" : "90"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "90",
+    "upBound" : "120"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "120",
+    "upBound" : "180"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "180"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "avg_apru_trend",
+  "dbFieldName" : "avg_apru_trend",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "38"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "39",
+    "upBound" : "58"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "59",
+    "upBound" : "68"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "69",
+    "upBound" : "98"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "99",
+    "upBound" : "168"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "168"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "avg_exceeding_cost",
+  "dbFieldName" : "avg_exceeding_cost",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "10",
+    "upBound" : "20"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "20",
+    "upBound" : "30"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "30",
+    "upBound" : "50"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "50"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "avg_arreas",
+  "dbFieldName" : "avg_arreas",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "10",
+    "upBound" : "20"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "20",
+    "upBound" : "30"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "30"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "ARPU",
+  "dbFieldName" : "ARPU",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "40"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "40",
+    "upBound" : "80"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "80",
+    "upBound" : "120"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "120",
+    "upBound" : "160"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "160",
+    "upBound" : "200"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "200"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "MOU",
+  "dbFieldName" : "MOU",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "30"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "30",
+    "upBound" : "200"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "200",
+    "upBound" : "300"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "300",
+    "upBound" : "500"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "500",
+    "upBound" : "800"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "800"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "DOU",
+  "dbFieldName" : "DOU",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "1"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "10",
+    "upBound" : "30"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "30",
+    "upBound" : "40"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "40",
+    "upBound" : "50"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "50"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "bxldjb_f",
+  "dbFieldName" : "bxldjb_f",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "bxl_lltsb",
+  "dbFieldName" : "bxl_lltsb",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "comm_call_cnts",
+  "dbFieldName" : "comm_call_cnts",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "100"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "101",
+    "upBound" : "200"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "201",
+    "upBound" : "400"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "401",
+    "upBound" : "600"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "600"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "comm_call_minute",
+  "dbFieldName" : "comm_call_minute",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "100"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "100",
+    "upBound" : "300"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "300",
+    "upBound" : "600"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "600",
+    "upBound" : "1000"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "1000"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "avg_call_m",
+  "dbFieldName" : "avg_call_m",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "60"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "60",
+    "upBound" : "120"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "120",
+    "upBound" : "180"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "180",
+    "upBound" : "240"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "240"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "kf_call_cnts",
+  "dbFieldName" : "kf_call_cnts",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "3"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "4",
+    "upBound" : "6"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "7",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "10"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "avg_call_kf",
+  "dbFieldName" : "avg_call_kf",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "15"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "15",
+    "upBound" : "30"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "30",
+    "upBound" : "45"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "45",
+    "upBound" : "60"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "60"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "kf_call_duration",
+  "dbFieldName" : "kf_call_duration",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "60"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "60",
+    "upBound" : "120"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "120",
+    "upBound" : "180"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "180",
+    "upBound" : "240"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "240"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "sjyyt_f",
+  "dbFieldName" : "sjyyt_f",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "是"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "否"
+  } ],
+  "mode" : "SingleAnd"
+}, {
+  "name" : "esrvcc_handover_count",
+  "dbFieldName" : "esrvcc_handover_count",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "3"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "4",
+    "upBound" : "9"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "9"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "wh_cnts",
+  "dbFieldName" : "wh_cnts",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "3"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "3"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "wh_reject_cnts",
+  "dbFieldName" : "wh_reject_cnts",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "3"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "3"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "jujue_cnts",
+  "dbFieldName" : "jujue_cnts",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "3"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "3"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "jujie_cnts",
+  "dbFieldName" : "jujie_cnts",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "3"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "3"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "number_of_complaints",
+  "dbFieldName" : "number_of_complaints",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "3"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "3"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "three_month_noc",
+  "dbFieldName" : "three_month_noc",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "3"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "3"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "tc_ts",
+  "dbFieldName" : "tc_ts",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "3"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "3"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "dou_ts",
+  "dbFieldName" : "dou_ts",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "3"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "3"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "fee_ts",
+  "dbFieldName" : "fee_ts",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "3"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "3"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "qianyue00",
+  "dbFieldName" : "qianyue00",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "5"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "5"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "echannel_nums",
+  "dbFieldName" : "echannel_nums",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "5"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "6",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "11",
+    "upBound" : "15"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "15"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "channel_nums",
+  "dbFieldName" : "channel_nums",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "0"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "5"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "6",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "11",
+    "upBound" : "15"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "15"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "web_flow",
+  "dbFieldName" : "web_flow",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "1"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "5"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "5",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "10",
+    "upBound" : "15"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "15",
+    "upBound" : "20"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "20"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "video_flow",
+  "dbFieldName" : "video_flow",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "1"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "5"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "5",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "10",
+    "upBound" : "20"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "20",
+    "upBound" : "40"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "40"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "game_flow",
+  "dbFieldName" : "game_flow",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "1"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "2"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "2",
+    "upBound" : "5"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "5",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "10",
+    "upBound" : "20"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "20"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "im_flow",
+  "dbFieldName" : "im_flow",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "1"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "2"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "2",
+    "upBound" : "5"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "5",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "10",
+    "upBound" : "20"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "20"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "Douyin_flow",
+  "dbFieldName" : "Douyin_flow",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "1"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "5"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "5",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "10",
+    "upBound" : "20"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "20",
+    "upBound" : "40"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "40"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "TX_flow",
+  "dbFieldName" : "TX_flow",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "1"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "5"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "5",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "10",
+    "upBound" : "20"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "20",
+    "upBound" : "40"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "40"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "QIY_flow",
+  "dbFieldName" : "QIY_flow",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "1"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "5"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "5",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "10",
+    "upBound" : "20"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "20",
+    "upBound" : "40"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "40"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "Wxin_flow",
+  "dbFieldName" : "Wxin_flow",
+  "valueMap" : [ {
+    "typeTag" : "range",
+    "lowBound" : "0",
+    "upBound" : "1"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "1",
+    "upBound" : "2"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "2",
+    "upBound" : "5"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "5",
+    "upBound" : "10"
+  }, {
+    "typeTag" : "range",
+    "lowBound" : "10",
+    "upBound" : "20"
+  }, {
+    "typeTag" : "above",
+    "lowBound" : "20"
+  } ],
+  "mode" : "OrMultipartAnd"
+}, {
+  "name" : "answercalls",
+  "isRequired" : true,
+  "dbFieldName" : "answercalls",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "所有"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "愿意接听电话"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "一般"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "拒绝接听电话"
+  } ],
+  "mode" : "SingleAnd"
+} ]
