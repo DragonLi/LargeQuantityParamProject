@@ -28,8 +28,9 @@ public class CemQueryBuilderTest {
             nameLst[0]="前端名字";
             nameLst[1]="是否必选";
             nameLst[2]="数据库字段名字";
-            nameLst[3]="字段分段";
-            nameLst[4]="字段间的值";
+            nameLst[3]="字段间的值";
+            nameLst[4]="是否为浮点数分段";
+            nameLst[5]="字段分段";
         }
         int[] indexLst = new int[nameLst.length];
         for (int i = 0; i < indexLst.length; i++) {
@@ -53,6 +54,7 @@ public class CemQueryBuilderTest {
 
         Pattern rangePat = Pattern.compile("(\\d+)\\-(\\d+)");
         Pattern abovePat = Pattern.compile("(\\d+)\\+");
+        Pattern openCloseRange = Pattern.compile("([\\(,\\[]\\d+)\\-(\\d+[\\),\\]])");
         int rowCount = sheet.getLastRowNum();
         CemQueryParamCfg[] cfgLst = new CemQueryParamCfg[rowCount-1];
 
@@ -85,6 +87,27 @@ public class CemQueryBuilderTest {
                     }
                     case 3:{
                         String cnt = cell.getStringCellValue();
+                        switch (cnt){
+                            case "单选":{
+                                cfg.mode=CemQueryParamCompositionMode.SingleAnd;
+                                break;
+                            }
+                            case "多选":{
+                                cfg.mode=CemQueryParamCompositionMode.OrMultipartAnd;
+                                break;
+                            }
+                            default:{
+                                throw new RuntimeException("unsupported mode: "+cnt);
+                            }
+                        }
+                        break;
+                    }
+                    case 4:{
+                        //TODO open close float range
+                        break;
+                    }
+                    case 5:{
+                        String cnt = cell.getStringCellValue();
                         String cleaned = cnt.replaceAll("以上","+").replaceAll("、",",").replaceAll("，",",");
                         String[] groups = cleaned.split(",");
                         cfg.valueMap=new ValuePredicate[groups.length];
@@ -107,23 +130,6 @@ public class CemQueryBuilderTest {
                                 if (rawPred.indexOf('-') != -1){
                                     throw new RuntimeException("non range value should not contains \"-\", or range value must be numbers");
                                 }
-                            }
-                        }
-                        break;
-                    }
-                    case 4:{
-                        String cnt = cell.getStringCellValue();
-                        switch (cnt){
-                            case "单选":{
-                                cfg.mode=CemQueryParamCompositionMode.SingleAnd;
-                                break;
-                            }
-                            case "多选":{
-                                cfg.mode=CemQueryParamCompositionMode.OrMultipartAnd;
-                                break;
-                            }
-                            default:{
-                                throw new RuntimeException("unsupported mode: "+cnt);
                             }
                         }
                         break;

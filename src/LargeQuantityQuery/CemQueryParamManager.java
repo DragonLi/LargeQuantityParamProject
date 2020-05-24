@@ -44,6 +44,7 @@ public class CemQueryParamManager {
         json.registerSubtypes(
                 new NamedType(EqualValuePredicate.class, "eq")
                 , new NamedType(RangePredicate.class, "range")
+                , new NamedType(OpenCloseRangePredicate.class, "floatRange")
                 , new NamedType(AboveValuePredicate.class, "above")
         );
         return json;
