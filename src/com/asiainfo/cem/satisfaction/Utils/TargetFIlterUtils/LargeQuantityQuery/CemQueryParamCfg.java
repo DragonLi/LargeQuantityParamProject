@@ -50,8 +50,8 @@ public class CemQueryParamCfg {
         if (valCount == 0 && isRequired){
             throw new RuntimeException("parameter value is required:"+name);
         }
-        if (valCount == 1 && values.get(0) == 0){
-            //0 means skip this field filtering
+        if (valCount == 1 && values.get(0) == -1){
+            //-1 means skip this field filtering
             return;
         }
         if (valCount > 0){
@@ -87,8 +87,6 @@ public class CemQueryParamCfg {
             throw new RuntimeException("No value for index:" + value);
         }
         int ind = value;
-        //shift one because of front end protocol
-        --ind;
         ValuePredicate fieldPred = valueMap[ind];
         fieldPred.generateCondition(dbFieldName,buffer);
     }
