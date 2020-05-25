@@ -1,6 +1,6 @@
-package LargeQuantityQuery;
+package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery;
 
-import static LargeQuantityQuery.CemQueryNumCheck.*;
+import static com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery.CemQueryNumCheck.*;
 
 public class AboveValuePredicate extends ValuePredicate {
     public String lowBound;

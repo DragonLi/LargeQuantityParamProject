@@ -1,4 +1,4 @@
-package LargeQuantityQuery;
+package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery;
 
 public enum CemQueryParamCompositionMode {
     SingleAnd,//只有一个内部值，并与其他条件“与”组合
