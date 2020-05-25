@@ -53,6 +53,7 @@ public class CemQueryBuilderTest {
 
         Pattern rangePat = Pattern.compile("([(,\\[])?(\\d+)-(\\d+)([),\\]])?");
         Pattern abovePat = Pattern.compile("(\\d+)\\+");
+        Pattern enumPat = Pattern.compile("(.+)=(\\d+)?");
         int rowCount = sheet.getLastRowNum();
         CemQueryParamCfg[] cfgLst = new CemQueryParamCfg[rowCount-1];
 
@@ -165,18 +166,18 @@ public class CemQueryBuilderTest {
                                     fRange.isRightOpen = !isRightClose;
                                 }else
                                     throw new RuntimeException("字段值域验证必须填写整数分段或浮点数分段:"+cfg);
-                            }else{
+                            }else {
                                 //枚举值(默认值)/布尔值/整数分段
                                 EqualValuePredicate eq = new EqualValuePredicate();
                                 cfg.valueMap[k]=eq;
-                                //是 -> 1/否 -> 0
-                                eq.eqVal= fTy == QueryFieldType.TyBool? (rawPred.equals("是") ? "1" : "0") : rawPred;
+                                if ((match=enumPat.matcher(rawPred)).find()){
+                                    eq.eqVal=match.group(2);
+                                }else{
+                                    eq.eqVal=rawPred;
+                                }
                                 if (rawPred.indexOf('-') != -1){
                                     throw new RuntimeException("non range value should not contains \"-\", or range value must be numbers");
                                 }
-                                /*if (fTy != QueryFieldType.TyBool && fTy != QueryFieldType.TyEnum && fTy != QueryFieldType.TyInt){
-                                    throw new RuntimeException("字段值域验证必须填写整数分段或浮点数分段\n"+cfg);
-                                }*/
                             }
                         }
                         break;
@@ -197,7 +198,7 @@ public class CemQueryBuilderTest {
         CemQueryParamManager mgr = new CemQueryParamManager();
         mgr.init();
         System.out.println("finished");
-        /**
+        /*
          * TODO
          * 3 多选参数组合时分段的合并
          * 4 测试:多选参数重复,顺序,边缘重叠和覆盖等(CemQueryNumValOverlap); 默认参数设置;多选参数组合时分段的合并
