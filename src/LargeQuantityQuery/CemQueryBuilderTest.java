@@ -34,9 +34,7 @@ public class CemQueryBuilderTest {
         }
 
         int[] indexLst = new int[nameLst.length];
-        for (int i = 0; i < indexLst.length; i++) {
-            indexLst[i]=-1;
-        }
+        Arrays.fill(indexLst, -1);
         XSSFRow headerRow = sheet.getRow(0);
         for (Cell cell : headerRow) {
             String cnt = cell.getStringCellValue();
@@ -53,7 +51,7 @@ public class CemQueryBuilderTest {
                 throw new RuntimeException("required field not found: "+nameLst[i]);
         }
 
-        Pattern rangePat = Pattern.compile("([\\(,\\[])?(\\d+)\\-(\\d+)([\\),\\]])?");
+        Pattern rangePat = Pattern.compile("([(,\\[])?(\\d+)-(\\d+)([),\\]])?");
         Pattern abovePat = Pattern.compile("(\\d+)\\+");
         int rowCount = sheet.getLastRowNum();
         CemQueryParamCfg[] cfgLst = new CemQueryParamCfg[rowCount-1];

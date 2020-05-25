@@ -9,6 +9,11 @@ public class OpenCloseRangePredicate extends ValuePredicate {
     public boolean isRightOpen;
 
     @Override
+    public String toString() {
+        return (isLeftOpen? "(":"[")+ lowBound+"-"+upBound+(isRightOpen?")":"]");
+    }
+
+    @Override
     public void generateCondition(String dbFieldName, StringBuffer buffer) {
         buffer.append('(')
                 .append(dbFieldName).append(isLeftOpen?">":">=").append(lowBound)
