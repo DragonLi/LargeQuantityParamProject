@@ -1,6 +1,6 @@
 package LargeQuantityQuery;
 
-import static LargeQuantityQuery.CemQueryNumValOverlap.*;
+import static LargeQuantityQuery.CemQueryNumCheck.*;
 
 public class EqualValuePredicate extends ValuePredicate {
     public String eqVal;
@@ -21,12 +21,12 @@ public class EqualValuePredicate extends ValuePredicate {
     }
 
     @Override
-    public CemQueryNumValOverlap testMergedWith(ValuePredicate other) {
+    public CemQueryNumCheck testMergedWith(ValuePredicate other) {
         return other.testOverlap(this);
     }
 
     @Override
-    protected CemQueryNumValOverlap testOverlap(EqualValuePredicate left) {
+    protected CemQueryNumCheck testOverlap(EqualValuePredicate left) {
         //Normal,EdgeOverlap,OutOfOrder,MixedNumWithStr
         if (this.eqVal.equals(left.eqVal)){
             return Overlap;
@@ -52,7 +52,7 @@ public class EqualValuePredicate extends ValuePredicate {
     }
 
     @Override
-    protected CemQueryNumValOverlap testOverlap(RangePredicate left) {
+    protected CemQueryNumCheck testOverlap(RangePredicate left) {
         //Normal,OutOfOrder,MixedNumWithStr
         int rightOp;
         try{
@@ -68,7 +68,30 @@ public class EqualValuePredicate extends ValuePredicate {
     }
 
     @Override
-    protected CemQueryNumValOverlap testOverlap(AboveValuePredicate left) {
+    protected CemQueryNumCheck testOverlap(OpenCloseRangePredicate left) {
+        //Normal,Overlap,OutOfOrder,MixedNumWithStr
+        int rightOp;
+        try{
+            rightOp=Integer.parseInt(eqVal);
+        }catch (NumberFormatException ex){
+            return MixedNumWithStr;
+        }
+        int leftLow = Integer.parseInt(left.lowBound);
+        int leftHigh = Integer.parseInt(left.upBound);
+        if (left.isLeftOpen && rightOp <= leftLow
+                || !left.isLeftOpen && rightOp < leftLow){
+            return OutOfOrder;
+        }
+        if (left.isRightOpen && rightOp < leftHigh
+                || !left.isRightOpen &&rightOp <= leftHigh){
+            return Overlap;
+        }
+
+        return Normal;
+    }
+
+    @Override
+    protected CemQueryNumCheck testOverlap(AboveValuePredicate left) {
         //Overlap,OutOfOrder,MixedNumWithStr
         int rightOp;
         try{
@@ -93,9 +116,6 @@ public class EqualValuePredicate extends ValuePredicate {
         }
         return false;
     }
-
-    @Override
-    public void increaseLowerBoundNumber() {}
 
     @Override
     public boolean checkRange() {

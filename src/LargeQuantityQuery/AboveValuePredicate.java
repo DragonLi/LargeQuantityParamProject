@@ -1,6 +1,6 @@
 package LargeQuantityQuery;
 
-import static LargeQuantityQuery.CemQueryNumValOverlap.*;
+import static LargeQuantityQuery.CemQueryNumCheck.*;
 
 public class AboveValuePredicate extends ValuePredicate {
     public String lowBound;
@@ -21,12 +21,12 @@ public class AboveValuePredicate extends ValuePredicate {
     }
 
     @Override
-    public CemQueryNumValOverlap testMergedWith(ValuePredicate other) {
+    public CemQueryNumCheck testMergedWith(ValuePredicate other) {
         return other.testOverlap(this);
     }
 
     @Override
-    protected CemQueryNumValOverlap testOverlap(EqualValuePredicate left) {
+    protected CemQueryNumCheck testOverlap(EqualValuePredicate left) {
         //Normal,EdgeOverlap,Overlap,MixedNumWithStr
         int leftOp;
         try{
@@ -45,7 +45,7 @@ public class AboveValuePredicate extends ValuePredicate {
     }
 
     @Override
-    protected CemQueryNumValOverlap testOverlap(RangePredicate left) {
+    protected CemQueryNumCheck testOverlap(RangePredicate left) {
         //Normal,EdgeOverlap,Overlap
         int leftLow = Integer.parseInt(left.lowBound);
         int leftHigh = Integer.parseInt(left.upBound);
@@ -59,7 +59,17 @@ public class AboveValuePredicate extends ValuePredicate {
     }
 
     @Override
-    protected CemQueryNumValOverlap testOverlap(AboveValuePredicate left) {
+    protected CemQueryNumCheck testOverlap(AboveValuePredicate left) {
+        return Overlap;
+    }
+
+    @Override
+    protected CemQueryNumCheck testOverlap(OpenCloseRangePredicate left) {
+        //Normal,Overlap
+        int leftHigh = Integer.parseInt(left.upBound);
+        int rightLow = Integer.parseInt(lowBound);
+        if (leftHigh <= rightLow)
+            return Normal;
         return Overlap;
     }
 

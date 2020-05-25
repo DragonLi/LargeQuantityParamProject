@@ -1,9 +1,11 @@
 package LargeQuantityQuery;
 
-public enum CemQueryNumValOverlap {
+public enum CemQueryNumCheck {
     Normal,
     EdgeOverlap,
     Overlap,
     OutOfOrder,
     MixedNumWithStr,
+    LeakFloatGap,
+    MixedFloatRangeWithIntRange,
 }

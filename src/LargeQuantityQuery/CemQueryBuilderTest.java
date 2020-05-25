@@ -23,15 +23,16 @@ public class CemQueryBuilderTest {
     public void testExcel() throws IOException {
         XSSFWorkbook excel = new XSSFWorkbook("重庆多条件组合查询-代码生成配置.xlsx");
         XSSFSheet sheet = excel.getSheetAt(0);
-        String[] nameLst = new String[5];
+        String[] nameLst = new String[6];
         {
             nameLst[0]="前端名字";
             nameLst[1]="是否必选";
             nameLst[2]="数据库字段名字";
-            nameLst[3]="字段间的值";
-            nameLst[4]="是否为浮点数分段";
-            nameLst[5]="字段分段";
+            nameLst[3]="单选/多选";
+            nameLst[4]="字段值域验证";//枚举值(默认值)/布尔值/整数分段/浮点数分段
+            nameLst[5]="字段选项";
         }
+
         int[] indexLst = new int[nameLst.length];
         for (int i = 0; i < indexLst.length; i++) {
             indexLst[i]=-1;
@@ -52,9 +53,8 @@ public class CemQueryBuilderTest {
                 throw new RuntimeException("required field not found: "+nameLst[i]);
         }
 
-        Pattern rangePat = Pattern.compile("(\\d+)\\-(\\d+)");
+        Pattern rangePat = Pattern.compile("([\\(,\\[])?(\\d+)\\-(\\d+)([\\),\\]])?");
         Pattern abovePat = Pattern.compile("(\\d+)\\+");
-        Pattern openCloseRange = Pattern.compile("([\\(,\\[]\\d+)\\-(\\d+[\\),\\]])");
         int rowCount = sheet.getLastRowNum();
         CemQueryParamCfg[] cfgLst = new CemQueryParamCfg[rowCount-1];
 
@@ -63,6 +63,7 @@ public class CemQueryBuilderTest {
             CemQueryParamCfg cfg = new CemQueryParamCfg();
             cfgLst[i-1] = cfg;
             String requiredCnt = null;
+            QueryFieldType fTy = null;
             for (int j = 0; j < indexLst.length; j++) {
                 int targetIndex = indexLst[j];
                 XSSFCell cell = row.getCell(targetIndex);
@@ -103,7 +104,33 @@ public class CemQueryBuilderTest {
                         break;
                     }
                     case 4:{
-                        //TODO open close float range
+                        //枚举值(默认值)/布尔值/整数分段/浮点数分段
+                        String cnt = cell.getStringCellValue();
+                        if (cnt == null || cnt.trim().length() ==0){
+                            fTy=QueryFieldType.TyEnum;
+                            break;
+                        }
+                        switch (cnt){
+                            case "布尔值":{
+                                fTy=QueryFieldType.TyBool;
+                                break;
+                            }
+                            case "枚举值":{
+                                fTy=QueryFieldType.TyEnum;
+                                break;
+                            }
+                            case "整数分段":{
+                                fTy=QueryFieldType.TyInt;
+                                break;
+                            }
+                            case "浮点数分段":{
+                                fTy=QueryFieldType.TyFloat;
+                                break;
+                            }
+                            default:{
+                                throw new RuntimeException("unsupported type:"+cnt);
+                            }
+                        }
                         break;
                     }
                     case 5:{
@@ -115,28 +142,50 @@ public class CemQueryBuilderTest {
                             String rawPred = groups[k].trim();
                             Matcher match;
                             if ((match=abovePat.matcher(rawPred)).find()){
+                                //整数分段/浮点数分段
                                 AboveValuePredicate above = new AboveValuePredicate();
                                 cfg.valueMap[k]=above;
                                 above.lowBound = match.group(1);
+                                if (fTy != QueryFieldType.TyInt && fTy != QueryFieldType.TyFloat){
+                                    throw new RuntimeException("字段值域验证必须填写整数分段或浮点数分段:"+cfg);
+                                }
                             }else if ((match=rangePat.matcher(rawPred)).find()){
-                                RangePredicate range = new RangePredicate();
-                                cfg.valueMap[k]=range;
-                                range.lowBound=match.group(1);
-                                range.upBound=match.group(2);
+                                //整数分段/浮点数分段
+                                if (fTy == QueryFieldType.TyInt){
+                                    RangePredicate range = new RangePredicate();
+                                    cfg.valueMap[k]=range;
+                                    range.lowBound=match.group(2);
+                                    range.upBound=match.group(3);
+                                }else if (fTy == QueryFieldType.TyFloat){
+                                    boolean isLeftClose = match.group(1) == null || match.group(1).equals("[");
+                                    boolean isRightClose = match.group(4) == null || match.group(4).equals("]");
+                                    OpenCloseRangePredicate fRange = new OpenCloseRangePredicate();
+                                    cfg.valueMap[k]=fRange;
+                                    fRange.lowBound=match.group(2);
+                                    fRange.upBound=match.group(3);
+                                    fRange.isLeftOpen = !isLeftClose;
+                                    fRange.isRightOpen = !isRightClose;
+                                }else
+                                    throw new RuntimeException("字段值域验证必须填写整数分段或浮点数分段:"+cfg);
                             }else{
+                                //枚举值(默认值)/布尔值/整数分段
                                 EqualValuePredicate eq = new EqualValuePredicate();
                                 cfg.valueMap[k]=eq;
-                                eq.eqVal=rawPred;
+                                //是 -> 1/否 -> 0
+                                eq.eqVal= fTy == QueryFieldType.TyBool? (rawPred.equals("是") ? "1" : "0") : rawPred;
                                 if (rawPred.indexOf('-') != -1){
                                     throw new RuntimeException("non range value should not contains \"-\", or range value must be numbers");
                                 }
+                                /*if (fTy != QueryFieldType.TyBool && fTy != QueryFieldType.TyEnum && fTy != QueryFieldType.TyInt){
+                                    throw new RuntimeException("字段值域验证必须填写整数分段或浮点数分段\n"+cfg);
+                                }*/
                             }
                         }
                         break;
                     }
                 }
             }
-            CheckRequired(cfg,requiredCnt);
+            CheckRequired(cfg,requiredCnt,fTy);
         }
 
         System.out.println("load excel finished");
@@ -152,13 +201,12 @@ public class CemQueryBuilderTest {
         System.out.println("finished");
         /**
          * TODO
-         * 2 分段的浮点数处理
          * 3 多选参数组合时分段的合并
          * 4 测试:多选参数重复,顺序,边缘重叠和覆盖等(CemQueryNumValOverlap); 默认参数设置;多选参数组合时分段的合并
          */
     }
 
-    private static void CheckRequired(CemQueryParamCfg cfg, String requiredCnt) {
+    private static void CheckRequired(CemQueryParamCfg cfg, String requiredCnt, QueryFieldType fTy) {
         if (cfg.valueMap.length == 0){
             throw new RuntimeException("no value list found!"+cfg);
         }
@@ -178,12 +226,12 @@ public class CemQueryBuilderTest {
         ValuePredicate merged = valueMap[0];
         for (int i = 1; i < valueMap.length; i++) {
             ValuePredicate other = valueMap[i];
-            CemQueryNumValOverlap overlap = merged.testMergedWith(other);
+            CemQueryNumCheck overlap = merged.testMergedWith(other);
             switch (overlap){
                 case Normal:
                     break;
                 case EdgeOverlap:
-                    if (other instanceof RangePredicate){
+                    if (other instanceof RangePredicate || other instanceof OpenCloseRangePredicate){
                         System.out.println("range bound is overlap: "+merged+";"+other+" will be adjusted:"+cfg);
                         other.increaseLowerBoundNumber();
                         if (other.isCollapsed())
@@ -196,9 +244,16 @@ public class CemQueryBuilderTest {
                 case Overlap:
                     throw new RuntimeException("range overlap:"+cfg);
                 case OutOfOrder:
-                    throw new RuntimeException("values are not in order:"+cfg);
+                    if (fTy == QueryFieldType.TyInt || fTy == QueryFieldType.TyFloat)
+                        throw new RuntimeException("values are not in order:"+cfg);
+                    break;
                 case MixedNumWithStr:
                     throw new RuntimeException("mixing number choice with string choice is not supported:"+cfg);
+                case LeakFloatGap:
+                    throw new RuntimeException("float range is not continuous: "+cfg+
+                            "\nyou can comment out this exception in source code if that is desired");
+                case MixedFloatRangeWithIntRange:
+                    throw new RuntimeException("mixing float range with int range is not supported:"+cfg);
             }
             merged = other;
         }
@@ -266,7 +321,7 @@ public class CemQueryBuilderTest {
         try {
             return json.readValue(new File(fn), objType);
         } catch (IOException e) {
-            //TODO e.printStackTrace();
+            e.printStackTrace();
         }
         return null;
     }
@@ -275,7 +330,7 @@ public class CemQueryBuilderTest {
         try {
             return json.readValue(new File(fn), objType);
         } catch (IOException e) {
-            //TODO e.printStackTrace();
+            e.printStackTrace();
         }
         return null;
     }
@@ -284,7 +339,14 @@ public class CemQueryBuilderTest {
         try {
             json.writeValue(new File(fn), obj);
         } catch (IOException e) {
-            //TODO e.printStackTrace();
+            e.printStackTrace();
         }
+    }
+
+    private enum  QueryFieldType {
+        TyEnum,
+        TyBool,
+        TyInt,
+        TyFloat,
     }
 }

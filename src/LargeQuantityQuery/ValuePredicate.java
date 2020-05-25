@@ -13,18 +13,19 @@ public abstract class ValuePredicate {
 
     public abstract boolean containsVal(String requiredCnt);
 
-    public abstract CemQueryNumValOverlap testMergedWith(ValuePredicate other);
+    public abstract CemQueryNumCheck testMergedWith(ValuePredicate other);
     //double dispatch
-    protected abstract CemQueryNumValOverlap testOverlap(EqualValuePredicate left);
-    protected abstract CemQueryNumValOverlap testOverlap(RangePredicate left);
-    protected abstract CemQueryNumValOverlap testOverlap(AboveValuePredicate left);
+    protected abstract CemQueryNumCheck testOverlap(EqualValuePredicate left);
+    protected abstract CemQueryNumCheck testOverlap(RangePredicate left);
+    protected abstract CemQueryNumCheck testOverlap(AboveValuePredicate left);
+    protected abstract CemQueryNumCheck testOverlap(OpenCloseRangePredicate left);
 
     @Override
     public abstract boolean equals(Object obj);
 
-    public abstract void increaseLowerBoundNumber();
-
     public abstract boolean checkRange();
+
+    public void increaseLowerBoundNumber(){}
 
     public boolean isCollapsed(){
         return false;

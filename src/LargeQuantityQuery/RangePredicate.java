@@ -1,6 +1,6 @@
 package LargeQuantityQuery;
 
-import static LargeQuantityQuery.CemQueryNumValOverlap.*;
+import static LargeQuantityQuery.CemQueryNumCheck.*;
 
 public class RangePredicate extends ValuePredicate {
     public String lowBound;
@@ -20,16 +20,16 @@ public class RangePredicate extends ValuePredicate {
     @Override
     public boolean containsVal(String requiredCnt) {
         return requiredCnt!= null &&
-                (requiredCnt.contains(lowBound) || requiredCnt.contains(upBound));
+                requiredCnt.contains(lowBound+"-"+upBound);
     }
 
     @Override
-    public CemQueryNumValOverlap testMergedWith(ValuePredicate other) {
+    public CemQueryNumCheck testMergedWith(ValuePredicate other) {
         return other.testOverlap(this);
     }
 
     @Override
-    protected CemQueryNumValOverlap testOverlap(EqualValuePredicate left) {
+    protected CemQueryNumCheck testOverlap(EqualValuePredicate left) {
         //Normal,EdgeOverlap,Overlap,OutOfOrder,MixedNumWithStr
         int leftOp;
         try{
@@ -52,7 +52,7 @@ public class RangePredicate extends ValuePredicate {
     }
 
     @Override
-    protected CemQueryNumValOverlap testOverlap(RangePredicate left) {
+    protected CemQueryNumCheck testOverlap(RangePredicate left) {
         //Normal,EdgeOverlap,Overlap,OutOfOrder
         int leftLow = Integer.parseInt(left.lowBound);
         int leftHigh = Integer.parseInt(left.upBound);
@@ -69,13 +69,18 @@ public class RangePredicate extends ValuePredicate {
     }
 
     @Override
-    protected CemQueryNumValOverlap testOverlap(AboveValuePredicate left) {
+    protected CemQueryNumCheck testOverlap(AboveValuePredicate left) {
         //Overlap,OutOfOrder
         int leftLow = Integer.parseInt(left.lowBound);
         int rightHigh= Integer.parseInt(upBound);
         if (rightHigh<=leftLow)
             return OutOfOrder;
         return Overlap;
+    }
+
+    @Override
+    protected CemQueryNumCheck testOverlap(OpenCloseRangePredicate left) {
+        return MixedFloatRangeWithIntRange;
     }
 
     @Override
@@ -104,7 +109,8 @@ public class RangePredicate extends ValuePredicate {
     public boolean checkRange() {
         int low = Integer.parseInt(lowBound);
         int high = Integer.parseInt(upBound);
-        return low<=high;
+        //theoretically low is allowed to equal to high, but it is meaningless in practice
+        return low<high;
     }
 
     @Override
