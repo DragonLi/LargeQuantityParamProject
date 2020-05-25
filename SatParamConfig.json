@@ -3,10 +3,13 @@
   "dbFieldName" : "sex",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "男"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "女"
+    "eqVal" : "1"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "2"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -72,10 +75,10 @@
   "dbFieldName" : "is_school",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -83,10 +86,10 @@
   "dbFieldName" : "zdw_is_user",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -94,10 +97,10 @@
   "dbFieldName" : "is_arreas",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -105,10 +108,10 @@
   "dbFieldName" : "pri_is_bxl",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -116,10 +119,10 @@
   "dbFieldName" : "is_hyj",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -127,10 +130,10 @@
   "dbFieldName" : "is_5g_term",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -138,10 +141,10 @@
   "dbFieldName" : "qianyue06",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -149,10 +152,10 @@
   "dbFieldName" : "mobh_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -183,10 +186,10 @@
   "dbFieldName" : "jiatdh_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -194,10 +197,10 @@
   "dbFieldName" : "family_act",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -205,10 +208,10 @@
   "dbFieldName" : "is_group_member",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -216,10 +219,10 @@
   "dbFieldName" : "gxqllgx_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -227,10 +230,10 @@
   "dbFieldName" : "g4gongx_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -238,10 +241,10 @@
   "dbFieldName" : "yunqx_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -249,10 +252,10 @@
   "dbFieldName" : "jitdh_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -260,10 +263,10 @@
   "dbFieldName" : "tongf_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -271,10 +274,10 @@
   "dbFieldName" : "hejy_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -570,10 +573,10 @@
   "dbFieldName" : "bxldjb_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -581,10 +584,10 @@
   "dbFieldName" : "bxl_lltsb",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -766,10 +769,10 @@
   "dbFieldName" : "sjyyt_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "0"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "1"
   } ],
   "mode" : "SingleAnd"
 }, {
@@ -1116,8 +1119,8 @@
   } ],
   "mode" : "OrMultipartAnd"
 }, {
-  "name" : "Douyin_flow",
-  "dbFieldName" : "Douyin_flow",
+  "name" : "douyin_app_flow",
+  "dbFieldName" : "douyin_app_flow",
   "valueMap" : [ {
     "typeTag" : "floatRange",
     "lowBound" : "0",
@@ -1148,8 +1151,8 @@
   } ],
   "mode" : "OrMultipartAnd"
 }, {
-  "name" : "TX_flow",
-  "dbFieldName" : "TX_flow",
+  "name" : "tencent_video_app_flow",
+  "dbFieldName" : "tencent_video_app_flow",
   "valueMap" : [ {
     "typeTag" : "floatRange",
     "lowBound" : "0",
@@ -1180,8 +1183,8 @@
   } ],
   "mode" : "OrMultipartAnd"
 }, {
-  "name" : "QIY_flow",
-  "dbFieldName" : "QIY_flow",
+  "name" : "aiqiyi_video_app_flow",
+  "dbFieldName" : "aiqiyi_video_app_flow",
   "valueMap" : [ {
     "typeTag" : "floatRange",
     "lowBound" : "0",
@@ -1212,8 +1215,8 @@
   } ],
   "mode" : "OrMultipartAnd"
 }, {
-  "name" : "Wxin_flow",
-  "dbFieldName" : "Wxin_flow",
+  "name" : "weixin_app_flow",
+  "dbFieldName" : "weixin_app_flow",
   "valueMap" : [ {
     "typeTag" : "floatRange",
     "lowBound" : "0",
@@ -1245,20 +1248,19 @@
   "mode" : "OrMultipartAnd"
 }, {
   "name" : "answercalls",
-  "isRequired" : true,
-  "dbFieldName" : "answercalls",
+  "dbFieldName" : "is_answer",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "所有"
+    "eqVal" : "4"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "愿意接听电话"
+    "eqVal" : "1"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "一般"
+    "eqVal" : "2"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "拒绝接听电话"
+    "eqVal" : "3"
   } ],
   "mode" : "SingleAnd"
 } ]
