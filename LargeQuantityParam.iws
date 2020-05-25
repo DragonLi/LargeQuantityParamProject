@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d737cf80-52b3-4338-827f-fba671a6fb96" name="Default Changelist" comment="" />
+    <list default="true" id="d737cf80-52b3-4338-827f-fba671a6fb96" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/LargeQuantityParam.iws" beforeDir="false" afterPath="$PROJECT_DIR$/LargeQuantityParam.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/LargeQuantityQuery/CemQueryParamBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/LargeQuantityQuery/CemQueryParamBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/LargeQuantityQuery/CemQueryParamCfg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/LargeQuantityQuery/CemQueryParamCfg.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,17 +56,22 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.25130343" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils" />
+    </key>
+  </component>
   <component name="RunManager" selected="JUnit.CemQueryBuilderTest.testExcel">
     <configuration name="CemQueryBuilderTest.testExcel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LargeQuantityParam" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LargeQuantityQuery.*" />
+          <option name="PATTERN" value="com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="LargeQuantityQuery" />
-      <option name="MAIN_CLASS_NAME" value="LargeQuantityQuery.CemQueryBuilderTest" />
+      <option name="PACKAGE_NAME" value="com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery" />
+      <option name="MAIN_CLASS_NAME" value="com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery.CemQueryBuilderTest" />
       <option name="METHOD_NAME" value="testExcel" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -74,12 +83,12 @@
       <module name="LargeQuantityParam" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LargeQuantityQuery.*" />
+          <option name="PATTERN" value="com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="LargeQuantityQuery" />
-      <option name="MAIN_CLASS_NAME" value="LargeQuantityQuery.CemQueryBuilderTest" />
+      <option name="PACKAGE_NAME" value="com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery" />
+      <option name="MAIN_CLASS_NAME" value="com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery.CemQueryBuilderTest" />
       <option name="METHOD_NAME" value="testSatParamCfg" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -119,6 +128,8 @@
       <workItem from="1590214037327" duration="6056000" />
       <workItem from="1590289400186" duration="720000" />
       <workItem from="1590374717761" duration="11243000" />
+      <workItem from="1590401284592" duration="18000" />
+      <workItem from="1590411076148" duration="151000" />
     </task>
     <servers />
   </component>
@@ -130,6 +141,10 @@
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
     <state x="674" y="95" width="563" height="881" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1056@0.0.1920.1056" timestamp="1590377823979" />
+    <state x="577" y="397" width="1343" height="278" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1590411122600">
+      <screen x="0" y="0" width="1920" height="1056" />
+    </state>
+    <state x="577" y="397" width="1343" height="278" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1056@0.0.1920.1056" timestamp="1590411122600" />
     <state x="599" y="139" key="#xdebugger.evaluate" timestamp="1590397078758">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
@@ -194,9 +209,9 @@
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
     <state x="455" y="230" key="run.anything.popup/0.0.1920.1056@0.0.1920.1056" timestamp="1590195442908" />
-    <state x="455" y="0" width="1009" height="1052" key="search.everywhere.popup" timestamp="1590397600626">
+    <state x="455" y="0" width="1009" height="1052" key="search.everywhere.popup" timestamp="1590401291263">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state x="455" y="0" width="1009" height="1052" key="search.everywhere.popup/0.0.1920.1056@0.0.1920.1056" timestamp="1590397600626" />
+    <state x="455" y="0" width="1009" height="1052" key="search.everywhere.popup/0.0.1920.1056@0.0.1920.1056" timestamp="1590401291263" />
   </component>
 </project>
