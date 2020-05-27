@@ -9,6 +9,7 @@ public class CemQueryParamCfg {
     public String dbFieldName;
     public ValuePredicate[] valueMap;
     public CemQueryParamCompositionMode mode;
+    public QueryFieldType fTy;
 
     @Override
     public String toString() {
@@ -79,6 +80,9 @@ public class CemQueryParamCfg {
         }
         if (valCount > 0){
             buffer.append(')');
+            if (fTy == QueryFieldType.TyBool){
+                //Add
+            }
         }
     }
 

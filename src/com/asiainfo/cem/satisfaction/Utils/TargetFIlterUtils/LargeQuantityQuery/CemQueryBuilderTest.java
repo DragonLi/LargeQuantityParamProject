@@ -62,7 +62,6 @@ public class CemQueryBuilderTest {
             CemQueryParamCfg cfg = new CemQueryParamCfg();
             cfgLst[i-1] = cfg;
             String requiredCnt = null;
-            QueryFieldType fTy = null;
             for (int j = 0; j < indexLst.length; j++) {
                 int targetIndex = indexLst[j];
                 XSSFCell cell = row.getCell(targetIndex);
@@ -106,24 +105,24 @@ public class CemQueryBuilderTest {
                         //枚举值(默认值)/布尔值/整数分段/浮点数分段
                         String cnt = cell.getStringCellValue();
                         if (cnt == null || cnt.trim().length() ==0){
-                            fTy=QueryFieldType.TyEnum;
+                            cfg.fTy =QueryFieldType.TyEnum;
                             break;
                         }
                         switch (cnt){
                             case "布尔值":{
-                                fTy=QueryFieldType.TyBool;
+                                cfg.fTy=QueryFieldType.TyBool;
                                 break;
                             }
                             case "枚举值":{
-                                fTy=QueryFieldType.TyEnum;
+                                cfg.fTy=QueryFieldType.TyEnum;
                                 break;
                             }
                             case "整数分段":{
-                                fTy=QueryFieldType.TyInt;
+                                cfg.fTy=QueryFieldType.TyInt;
                                 break;
                             }
                             case "浮点数分段":{
-                                fTy=QueryFieldType.TyFloat;
+                                cfg.fTy=QueryFieldType.TyFloat;
                                 break;
                             }
                             default:{
@@ -145,17 +144,17 @@ public class CemQueryBuilderTest {
                                 AboveValuePredicate above = new AboveValuePredicate();
                                 cfg.valueMap[k]=above;
                                 above.lowBound = match.group(1);
-                                if (fTy != QueryFieldType.TyInt && fTy != QueryFieldType.TyFloat){
+                                if (cfg.fTy != QueryFieldType.TyInt && cfg.fTy != QueryFieldType.TyFloat){
                                     throw new RuntimeException("字段值域验证必须填写整数分段或浮点数分段:"+cfg);
                                 }
                             }else if ((match=rangePat.matcher(rawPred)).find()){
                                 //整数分段/浮点数分段
-                                if (fTy == QueryFieldType.TyInt){
+                                if (cfg.fTy == QueryFieldType.TyInt){
                                     RangePredicate range = new RangePredicate();
                                     cfg.valueMap[k]=range;
                                     range.lowBound=match.group(2);
                                     range.upBound=match.group(3);
-                                }else if (fTy == QueryFieldType.TyFloat){
+                                }else if (cfg.fTy == QueryFieldType.TyFloat){
                                     boolean isLeftClose = match.group(1) == null || match.group(1).equals("[");
                                     boolean isRightClose = match.group(4) == null || match.group(4).equals("]");
                                     OpenCloseRangePredicate fRange = new OpenCloseRangePredicate();
@@ -184,7 +183,7 @@ public class CemQueryBuilderTest {
                     }
                 }
             }
-            CheckRequired(cfg,requiredCnt,fTy);
+            CheckRequired(cfg,requiredCnt);
         }
 
         System.out.println("load excel finished");
@@ -205,7 +204,8 @@ public class CemQueryBuilderTest {
          */
     }
 
-    private static void CheckRequired(CemQueryParamCfg cfg, String requiredCnt, QueryFieldType fTy) {
+    private static void CheckRequired(CemQueryParamCfg cfg, String requiredCnt) {
+        QueryFieldType fTy = cfg.fTy;
         if (cfg.valueMap.length == 0){
             throw new RuntimeException("no value list found!"+cfg);
         }
@@ -340,12 +340,5 @@ public class CemQueryBuilderTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private enum  QueryFieldType {
-        TyEnum,
-        TyBool,
-        TyInt,
-        TyFloat,
     }
 }
