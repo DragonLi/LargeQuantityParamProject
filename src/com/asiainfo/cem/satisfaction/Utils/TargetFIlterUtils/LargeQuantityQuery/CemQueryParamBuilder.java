@@ -56,4 +56,14 @@ public class CemQueryParamBuilder {
         }
         return buffer;
     }
+
+    public CemQueryParamCfg[] getNormalizerLst(List<String> outLst){
+        CemQueryParamCfg[] result = new CemQueryParamCfg[outLst.size()];
+        for (int i = 0; i < result.length; i++) {
+            Integer index = satParamMap.get(outLst.get(i));
+            int ind = index;
+            result[i] = satParamList[ind];
+        }
+        return result;
+    }
 }

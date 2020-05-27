@@ -80,9 +80,6 @@ public class CemQueryParamCfg {
         }
         if (valCount > 0){
             buffer.append(')');
-            if (fTy == QueryFieldType.TyBool){
-                //Add
-            }
         }
     }
 
@@ -93,5 +90,25 @@ public class CemQueryParamCfg {
         int ind = value;
         ValuePredicate fieldPred = valueMap[ind];
         fieldPred.generateCondition(dbFieldName,buffer);
+    }
+
+    public String normalizeFieldVal(String val){
+        if (fTy == QueryFieldType.TyBool){
+            switch (val){
+                case "1":
+                    return "是";
+                case "0":
+                    return "否";
+            }
+        }
+        if (dbFieldName.equals("sex")){
+            switch (val){//男=1、女=2
+                case "1":
+                    return "男";
+                case "2":
+                    return "女";
+            }
+        }
+        return val;
     }
 }

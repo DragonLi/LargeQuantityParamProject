@@ -11,7 +11,8 @@
     "typeTag" : "eq",
     "eqVal" : "2"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyEnum"
 }, {
   "name" : "age",
   "dbFieldName" : "age",
@@ -31,7 +32,8 @@
     "typeTag" : "above",
     "lowBound" : "60"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "star_level",
   "dbFieldName" : "star_level",
@@ -55,7 +57,8 @@
     "typeTag" : "above",
     "lowBound" : "5"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "deptflag",
   "dbFieldName" : "deptflag",
@@ -69,7 +72,8 @@
     "typeTag" : "eq",
     "eqVal" : "农村"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyEnum"
 }, {
   "name" : "is_school",
   "dbFieldName" : "is_school",
@@ -80,7 +84,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "zdw_is_user",
   "dbFieldName" : "zdw_is_user",
@@ -91,7 +96,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "is_arreas",
   "dbFieldName" : "is_arreas",
@@ -102,7 +108,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "pri_is_bxl",
   "dbFieldName" : "pri_is_bxl",
@@ -113,7 +120,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "is_hyj",
   "dbFieldName" : "is_hyj",
@@ -124,7 +132,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "is_5g_term",
   "dbFieldName" : "is_5g_term",
@@ -135,7 +144,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "qianyue06",
   "dbFieldName" : "qianyue06",
@@ -146,7 +156,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "mobh_f",
   "dbFieldName" : "mobh_f",
@@ -157,7 +168,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "term_brand",
   "dbFieldName" : "term_brand",
@@ -180,7 +192,8 @@
     "typeTag" : "eq",
     "eqVal" : "其他"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyEnum"
 }, {
   "name" : "jiatdh_f",
   "dbFieldName" : "jiatdh_f",
@@ -191,7 +204,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "family_act",
   "dbFieldName" : "family_act",
@@ -202,7 +216,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "is_group_member",
   "dbFieldName" : "is_group_member",
@@ -213,7 +228,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "gxqllgx_f",
   "dbFieldName" : "gxqllgx_f",
@@ -224,7 +240,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "g4gongx_f",
   "dbFieldName" : "g4gongx_f",
@@ -235,7 +252,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "yunqx_f",
   "dbFieldName" : "yunqx_f",
@@ -246,7 +264,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "jitdh_f",
   "dbFieldName" : "jitdh_f",
@@ -257,7 +276,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "tongf_f",
   "dbFieldName" : "tongf_f",
@@ -268,7 +288,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "hejy_f",
   "dbFieldName" : "hejy_f",
@@ -279,7 +300,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "total_value",
   "dbFieldName" : "total_value",
@@ -312,7 +334,8 @@
     "typeTag" : "above",
     "lowBound" : "168"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "fee_extra_mou",
   "dbFieldName" : "fee_extra_mou",
@@ -333,7 +356,8 @@
     "typeTag" : "above",
     "lowBound" : "30"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "call_cost",
   "dbFieldName" : "call_cost",
@@ -350,7 +374,8 @@
     "typeTag" : "above",
     "lowBound" : "30"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "traffic_cost",
   "dbFieldName" : "traffic_cost",
@@ -382,7 +407,8 @@
     "typeTag" : "above",
     "lowBound" : "180"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "avg_apru_trend",
   "dbFieldName" : "avg_apru_trend",
@@ -414,7 +440,8 @@
     "typeTag" : "above",
     "lowBound" : "168"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "avg_exceeding_cost",
   "dbFieldName" : "avg_exceeding_cost",
@@ -445,7 +472,8 @@
     "typeTag" : "above",
     "lowBound" : "50"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "avg_arreas",
   "dbFieldName" : "avg_arreas",
@@ -471,7 +499,8 @@
     "typeTag" : "above",
     "lowBound" : "30"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "ARPU",
   "dbFieldName" : "ARPU",
@@ -503,7 +532,8 @@
     "typeTag" : "above",
     "lowBound" : "200"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "MOU",
   "dbFieldName" : "MOU",
@@ -535,7 +565,8 @@
     "typeTag" : "above",
     "lowBound" : "800"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "DOU",
   "dbFieldName" : "DOU",
@@ -567,7 +598,8 @@
     "typeTag" : "above",
     "lowBound" : "50"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "bxldjb_f",
   "dbFieldName" : "bxldjb_f",
@@ -578,7 +610,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "bxl_lltsb",
   "dbFieldName" : "bxl_lltsb",
@@ -589,7 +622,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "comm_call_cnts",
   "dbFieldName" : "comm_call_cnts",
@@ -616,7 +650,8 @@
     "typeTag" : "above",
     "lowBound" : "600"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "comm_call_minute",
   "dbFieldName" : "comm_call_minute",
@@ -647,7 +682,8 @@
     "typeTag" : "above",
     "lowBound" : "1000"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "avg_call_m",
   "dbFieldName" : "avg_call_m",
@@ -678,7 +714,8 @@
     "typeTag" : "above",
     "lowBound" : "240"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "kf_call_cnts",
   "dbFieldName" : "kf_call_cnts",
@@ -701,7 +738,8 @@
     "typeTag" : "above",
     "lowBound" : "10"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "avg_call_kf",
   "dbFieldName" : "avg_call_kf",
@@ -732,7 +770,8 @@
     "typeTag" : "above",
     "lowBound" : "60"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "kf_call_duration",
   "dbFieldName" : "kf_call_duration",
@@ -763,7 +802,8 @@
     "typeTag" : "above",
     "lowBound" : "240"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "sjyyt_f",
   "dbFieldName" : "sjyyt_f",
@@ -774,7 +814,8 @@
     "typeTag" : "eq",
     "eqVal" : "1"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyBool"
 }, {
   "name" : "esrvcc_handover_count",
   "dbFieldName" : "esrvcc_handover_count",
@@ -793,7 +834,8 @@
     "typeTag" : "above",
     "lowBound" : "9"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "wh_cnts",
   "dbFieldName" : "wh_cnts",
@@ -808,7 +850,8 @@
     "typeTag" : "above",
     "lowBound" : "3"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "wh_reject_cnts",
   "dbFieldName" : "wh_reject_cnts",
@@ -823,7 +866,8 @@
     "typeTag" : "above",
     "lowBound" : "3"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "jujue_cnts",
   "dbFieldName" : "jujue_cnts",
@@ -838,7 +882,8 @@
     "typeTag" : "above",
     "lowBound" : "3"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "jujie_cnts",
   "dbFieldName" : "jujie_cnts",
@@ -853,7 +898,8 @@
     "typeTag" : "above",
     "lowBound" : "3"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "number_of_complaints",
   "dbFieldName" : "number_of_complaints",
@@ -868,7 +914,8 @@
     "typeTag" : "above",
     "lowBound" : "3"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "three_month_noc",
   "dbFieldName" : "three_month_noc",
@@ -883,7 +930,8 @@
     "typeTag" : "above",
     "lowBound" : "3"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "tc_ts",
   "dbFieldName" : "tc_ts",
@@ -898,7 +946,8 @@
     "typeTag" : "above",
     "lowBound" : "3"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "dou_ts",
   "dbFieldName" : "dou_ts",
@@ -913,7 +962,8 @@
     "typeTag" : "above",
     "lowBound" : "3"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "fee_ts",
   "dbFieldName" : "fee_ts",
@@ -928,7 +978,8 @@
     "typeTag" : "above",
     "lowBound" : "3"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "qianyue00",
   "dbFieldName" : "qianyue00",
@@ -943,7 +994,8 @@
     "typeTag" : "above",
     "lowBound" : "5"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "echannel_nums",
   "dbFieldName" : "echannel_nums",
@@ -966,7 +1018,8 @@
     "typeTag" : "above",
     "lowBound" : "15"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "channel_nums",
   "dbFieldName" : "channel_nums",
@@ -989,7 +1042,8 @@
     "typeTag" : "above",
     "lowBound" : "15"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyInt"
 }, {
   "name" : "web_flow",
   "dbFieldName" : "web_flow",
@@ -1021,7 +1075,8 @@
     "typeTag" : "above",
     "lowBound" : "20"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "video_flow",
   "dbFieldName" : "video_flow",
@@ -1053,7 +1108,8 @@
     "typeTag" : "above",
     "lowBound" : "40"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "game_flow",
   "dbFieldName" : "game_flow",
@@ -1085,7 +1141,8 @@
     "typeTag" : "above",
     "lowBound" : "20"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "im_flow",
   "dbFieldName" : "im_flow",
@@ -1117,7 +1174,8 @@
     "typeTag" : "above",
     "lowBound" : "20"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "douyin_app_flow",
   "dbFieldName" : "douyin_app_flow",
@@ -1149,7 +1207,8 @@
     "typeTag" : "above",
     "lowBound" : "40"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "tencent_video_app_flow",
   "dbFieldName" : "tencent_video_app_flow",
@@ -1181,7 +1240,8 @@
     "typeTag" : "above",
     "lowBound" : "40"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "aiqiyi_video_app_flow",
   "dbFieldName" : "aiqiyi_video_app_flow",
@@ -1213,7 +1273,8 @@
     "typeTag" : "above",
     "lowBound" : "40"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "weixin_app_flow",
   "dbFieldName" : "weixin_app_flow",
@@ -1245,7 +1306,8 @@
     "typeTag" : "above",
     "lowBound" : "20"
   } ],
-  "mode" : "OrMultipartAnd"
+  "mode" : "OrMultipartAnd",
+  "fTy" : "TyFloat"
 }, {
   "name" : "answercalls",
   "dbFieldName" : "is_answer",
@@ -1262,5 +1324,6 @@
     "typeTag" : "eq",
     "eqVal" : "3"
   } ],
-  "mode" : "SingleAnd"
+  "mode" : "SingleAnd",
+  "fTy" : "TyEnum"
 } ]

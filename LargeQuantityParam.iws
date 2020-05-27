@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d737cf80-52b3-4338-827f-fba671a6fb96" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/LargeQuantityParam.iws" beforeDir="false" afterPath="$PROJECT_DIR$/LargeQuantityParam.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/LargeQuantityQuery/CemQueryBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/LargeQuantityQuery/CemQueryBuilderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SatParamConfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/SatParamConfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/LargeQuantityQuery/CemQueryParamBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/LargeQuantityQuery/CemQueryParamBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/LargeQuantityQuery/CemQueryParamCfg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/LargeQuantityQuery/CemQueryParamCfg.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,6 +144,8 @@
       <workItem from="1590411076148" duration="151000" />
       <workItem from="1590414984537" duration="4354000" />
       <workItem from="1590589110600" duration="1084000" />
+      <workItem from="1590591242548" duration="1058000" />
+      <workItem from="1590592318230" duration="25000" />
     </task>
     <servers />
   </component>
@@ -178,22 +181,22 @@
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
     <state x="482" y="206" width="1074" height="794" key="FileChooserDialogImpl/0.0.1920.1056@0.0.1920.1056" timestamp="1590158263076" />
-    <state width="1838" height="312" key="GridCell.Tab.0.bottom" timestamp="1590421315715">
+    <state width="1838" height="312" key="GridCell.Tab.0.bottom" timestamp="1590592342733">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1838" height="312" key="GridCell.Tab.0.bottom/0.0.1920.1056@0.0.1920.1056" timestamp="1590421315715" />
-    <state width="1838" height="312" key="GridCell.Tab.0.center" timestamp="1590421315715">
+    <state width="1838" height="312" key="GridCell.Tab.0.bottom/0.0.1920.1056@0.0.1920.1056" timestamp="1590592342733" />
+    <state width="1838" height="312" key="GridCell.Tab.0.center" timestamp="1590592342733">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1838" height="312" key="GridCell.Tab.0.center/0.0.1920.1056@0.0.1920.1056" timestamp="1590421315715" />
-    <state width="1838" height="312" key="GridCell.Tab.0.left" timestamp="1590421315714">
+    <state width="1838" height="312" key="GridCell.Tab.0.center/0.0.1920.1056@0.0.1920.1056" timestamp="1590592342733" />
+    <state width="1838" height="312" key="GridCell.Tab.0.left" timestamp="1590592342733">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1838" height="312" key="GridCell.Tab.0.left/0.0.1920.1056@0.0.1920.1056" timestamp="1590421315714" />
-    <state width="1838" height="312" key="GridCell.Tab.0.right" timestamp="1590421315715">
+    <state width="1838" height="312" key="GridCell.Tab.0.left/0.0.1920.1056@0.0.1920.1056" timestamp="1590592342733" />
+    <state width="1838" height="312" key="GridCell.Tab.0.right" timestamp="1590592342733">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1838" height="312" key="GridCell.Tab.0.right/0.0.1920.1056@0.0.1920.1056" timestamp="1590421315715" />
+    <state width="1838" height="312" key="GridCell.Tab.0.right/0.0.1920.1056@0.0.1920.1056" timestamp="1590592342733" />
     <state width="1838" height="553" key="GridCell.Tab.1.bottom" timestamp="1590421315713">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
