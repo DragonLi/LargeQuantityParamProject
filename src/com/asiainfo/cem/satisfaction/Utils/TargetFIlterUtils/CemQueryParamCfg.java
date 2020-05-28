@@ -56,7 +56,8 @@ public class CemQueryParamCfg {
             return;
         }
         if (valCount > 0){
-            buffer.append(" and ");
+            if (buffer.length() > 0)
+                buffer.append(" and ");
             buffer.append('(');
         }
         switch (mode){

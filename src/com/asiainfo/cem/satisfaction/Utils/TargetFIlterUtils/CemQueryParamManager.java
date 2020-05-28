@@ -36,6 +36,10 @@ public class CemQueryParamManager {
         return builder.CheckAndCompose(paramLst);
     }
 
+    public CemQueryParamCfg[] getNormalizerLst(List<String> outLst){
+        return builder.getNormalizerLst(outLst);
+    }
+
     public static ObjectMapper getQueryJsonHelper(){
         ObjectMapper json = new ObjectMapper();
         json.configure(SerializationFeature.INDENT_OUTPUT, true);
