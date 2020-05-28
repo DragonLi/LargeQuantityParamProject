@@ -94,21 +94,11 @@ public class CemQueryParamCfg {
     }
 
     public String normalizeFieldVal(String val){
-        if (fTy == QueryFieldType.TyBool){
-            switch (val){
-                case "1":
-                    return "是";
-                case "0":
-                    return "否";
-            }
-        }
-        if (dbFieldName.equals("sex")){
-            switch (val){//男=1、女=2
-                case "1":
-                    return "男";
-                case "2":
-                    return "女";
-            }
+        if (fTy != QueryFieldType.TyEnumReplace)
+            return val;
+        for (ValuePredicate valuePredicate : valueMap) {
+            if (valuePredicate.isReplaced(val))
+                return valuePredicate.normalizedVal(val);
         }
         return val;
     }

@@ -3,16 +3,19 @@
   "dbFieldName" : "sex",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "未知"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "男"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "2"
+    "eqVal" : "2",
+    "replace" : "女"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyEnum"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "age",
   "dbFieldName" : "age",
@@ -79,97 +82,113 @@
   "dbFieldName" : "is_school",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "zdw_is_user",
   "dbFieldName" : "zdw_is_user",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "is_arreas",
   "dbFieldName" : "is_arreas",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "pri_is_bxl",
   "dbFieldName" : "pri_is_bxl",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "is_hyj",
   "dbFieldName" : "is_hyj",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "is_5g_term",
   "dbFieldName" : "is_5g_term",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "qianyue06",
   "dbFieldName" : "qianyue06",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "mobh_f",
   "dbFieldName" : "mobh_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "term_brand",
   "dbFieldName" : "term_brand",
@@ -199,109 +218,127 @@
   "dbFieldName" : "jiatdh_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "family_act",
   "dbFieldName" : "family_act",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "is_group_member",
   "dbFieldName" : "is_group_member",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "gxqllgx_f",
   "dbFieldName" : "gxqllgx_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "g4gongx_f",
   "dbFieldName" : "g4gongx_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "yunqx_f",
   "dbFieldName" : "yunqx_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "jitdh_f",
   "dbFieldName" : "jitdh_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "tongf_f",
   "dbFieldName" : "tongf_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "hejy_f",
   "dbFieldName" : "hejy_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "total_value",
   "dbFieldName" : "total_value",
@@ -605,25 +642,29 @@
   "dbFieldName" : "bxldjb_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "bxl_lltsb",
   "dbFieldName" : "bxl_lltsb",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "comm_call_cnts",
   "dbFieldName" : "comm_call_cnts",
@@ -809,13 +850,15 @@
   "dbFieldName" : "sjyyt_f",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "0"
+    "eqVal" : "0",
+    "replace" : "否"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "是"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyBool"
+  "fTy" : "TyEnumReplace"
 }, {
   "name" : "esrvcc_handover_count",
   "dbFieldName" : "esrvcc_handover_count",
@@ -1313,17 +1356,21 @@
   "dbFieldName" : "is_answer",
   "valueMap" : [ {
     "typeTag" : "eq",
-    "eqVal" : "4"
+    "eqVal" : "4",
+    "replace" : "所有"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "1"
+    "eqVal" : "1",
+    "replace" : "愿意接听电话"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "2"
+    "eqVal" : "2",
+    "replace" : "一般"
   }, {
     "typeTag" : "eq",
-    "eqVal" : "3"
+    "eqVal" : "3",
+    "replace" : "拒绝接听电话"
   } ],
   "mode" : "SingleAnd",
-  "fTy" : "TyEnum"
+  "fTy" : "TyEnumReplace"
 } ]

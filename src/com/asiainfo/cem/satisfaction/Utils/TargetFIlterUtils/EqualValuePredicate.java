@@ -2,6 +2,19 @@ package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils;
 
 public class EqualValuePredicate extends ValuePredicate {
     public String eqVal;
+    public String replace;
+
+    @Override
+    public String normalizedVal(String val) {
+        if (eqVal.equals(val))
+            return replace != null ? replace : val;
+        return null;
+    }
+
+    @Override
+    public boolean isReplaced(String val) {
+        return replace != null && eqVal.equals(val);
+    }
 
     @Override
     public String toString() {

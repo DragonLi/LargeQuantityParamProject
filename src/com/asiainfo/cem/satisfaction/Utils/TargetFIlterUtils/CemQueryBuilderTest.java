@@ -18,6 +18,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.QueryFieldType.*;
+
 public class CemQueryBuilderTest {
     @Test
     public void testExcel() throws IOException {
@@ -109,11 +111,8 @@ public class CemQueryBuilderTest {
                             break;
                         }
                         switch (cnt){
-                            case "布尔值":{
-                                cfg.fTy=QueryFieldType.TyBool;
-                                break;
-                            }
-                            case "枚举值":{
+                            case "布尔值":
+                            case "枚举值": {
                                 cfg.fTy=QueryFieldType.TyEnum;
                                 break;
                             }
@@ -170,7 +169,10 @@ public class CemQueryBuilderTest {
                                 EqualValuePredicate eq = new EqualValuePredicate();
                                 cfg.valueMap[k]=eq;
                                 if ((match=enumPat.matcher(rawPred)).find()){
+                                    //枚举值(默认值)/布尔值
                                     eq.eqVal=match.group(2);
+                                    eq.replace = match.group(1);
+                                    cfg.fTy=TyEnumReplace;
                                 }else{
                                     eq.eqVal=rawPred;
                                 }
@@ -199,6 +201,7 @@ public class CemQueryBuilderTest {
         System.out.println("finished");
         /*
          * TODO
+         * 2 type consistence check
          * 3 多选参数组合时分段的合并
          * 4 测试:多选参数重复,顺序,边缘重叠和覆盖等(CemQueryNumValOverlap); 默认参数设置;多选参数组合时分段的合并
          */
@@ -218,6 +221,14 @@ public class CemQueryBuilderTest {
             }
             if (!predicate.checkRange())
                 throw new RuntimeException("invalid range bound:"+cfg);
+            if (fTy == TyEnumReplace){
+                if (predicate instanceof EqualValuePredicate){
+                    EqualValuePredicate eqP = (EqualValuePredicate)predicate;
+                    if (eqP.replace == null)
+                        throw new RuntimeException("Not consistent Enum format: "+cfg);
+                }else
+                    throw new RuntimeException("Not consistent Enum format: " + cfg);
+            }
 
             testSet.add(predicate);
         }

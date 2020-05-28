@@ -34,4 +34,10 @@ public abstract class ValuePredicate {
     public ValuePredicate collapse(){
         return this;
     }
+
+    public String normalizedVal(String val){return val;}
+
+    public boolean isReplaced(String val) {
+        return false;
+    }
 }
