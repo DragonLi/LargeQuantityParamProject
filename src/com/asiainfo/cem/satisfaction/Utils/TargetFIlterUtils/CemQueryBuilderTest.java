@@ -1,4 +1,4 @@
-package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery;
+package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

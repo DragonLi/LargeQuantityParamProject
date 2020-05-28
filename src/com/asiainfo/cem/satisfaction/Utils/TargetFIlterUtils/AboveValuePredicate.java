@@ -1,6 +1,4 @@
-package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery;
-
-import static com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery.CemQueryNumCheck.*;
+package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils;
 
 public class AboveValuePredicate extends ValuePredicate {
     public String lowBound;
@@ -32,16 +30,16 @@ public class AboveValuePredicate extends ValuePredicate {
         try{
             leftOp=Integer.parseInt(left.eqVal);
         }catch (NumberFormatException ex){
-            return MixedNumWithStr;
+            return CemQueryNumCheck.MixedNumWithStr;
         }
         int rightLow = Integer.parseInt(lowBound);
         if (leftOp <= rightLow){
-            return Normal;
+            return CemQueryNumCheck.Normal;
         }
         if (leftOp == rightLow+1)
-            return EdgeOverlap;
+            return CemQueryNumCheck.EdgeOverlap;
         //leftOp > rightLow+1
-        return Overlap;
+        return CemQueryNumCheck.Overlap;
     }
 
     @Override
@@ -51,16 +49,16 @@ public class AboveValuePredicate extends ValuePredicate {
         int leftHigh = Integer.parseInt(left.upBound);
         int rightLow = Integer.parseInt(lowBound);
         if (leftHigh <= rightLow)
-            return Normal;
+            return CemQueryNumCheck.Normal;
         if (leftHigh == rightLow +1)
-            return EdgeOverlap;
+            return CemQueryNumCheck.EdgeOverlap;
         //leftHigh > rightLow+1
-        return Overlap;
+        return CemQueryNumCheck.Overlap;
     }
 
     @Override
     protected CemQueryNumCheck testOverlap(AboveValuePredicate left) {
-        return Overlap;
+        return CemQueryNumCheck.Overlap;
     }
 
     @Override
@@ -69,8 +67,8 @@ public class AboveValuePredicate extends ValuePredicate {
         int leftHigh = Integer.parseInt(left.upBound);
         int rightLow = Integer.parseInt(lowBound);
         if (leftHigh <= rightLow)
-            return Normal;
-        return Overlap;
+            return CemQueryNumCheck.Normal;
+        return CemQueryNumCheck.Overlap;
     }
 
     @Override

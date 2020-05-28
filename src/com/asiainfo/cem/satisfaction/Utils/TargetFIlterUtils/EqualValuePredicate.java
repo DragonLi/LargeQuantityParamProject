@@ -1,6 +1,4 @@
-package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery;
-
-import static com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery.CemQueryNumCheck.*;
+package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils;
 
 public class EqualValuePredicate extends ValuePredicate {
     public String eqVal;
@@ -29,7 +27,7 @@ public class EqualValuePredicate extends ValuePredicate {
     protected CemQueryNumCheck testOverlap(EqualValuePredicate left) {
         //Normal,EdgeOverlap,OutOfOrder,MixedNumWithStr
         if (this.eqVal.equals(left.eqVal)){
-            return Overlap;
+            return CemQueryNumCheck.Overlap;
         }
         int rightOp=Integer.MIN_VALUE,leftOp=Integer.MIN_VALUE;
         try{
@@ -42,13 +40,13 @@ public class EqualValuePredicate extends ValuePredicate {
         }
         if (rightOp != Integer.MIN_VALUE && leftOp != Integer.MIN_VALUE){
             if (leftOp > rightOp)
-                return OutOfOrder;
+                return CemQueryNumCheck.OutOfOrder;
         }
         if (rightOp == Integer.MIN_VALUE && leftOp != Integer.MIN_VALUE
                 || rightOp != Integer.MIN_VALUE && leftOp == Integer.MIN_VALUE){
-            return MixedNumWithStr;
+            return CemQueryNumCheck.MixedNumWithStr;
         }
-        return Normal;
+        return CemQueryNumCheck.Normal;
     }
 
     @Override
@@ -58,13 +56,13 @@ public class EqualValuePredicate extends ValuePredicate {
         try{
             rightOp=Integer.parseInt(eqVal);
         }catch (NumberFormatException ex){
-            return MixedNumWithStr;
+            return CemQueryNumCheck.MixedNumWithStr;
         }
 
         int high = Integer.parseInt(left.upBound);
         if (high >= rightOp)
-            return OutOfOrder;
-        return Normal;
+            return CemQueryNumCheck.OutOfOrder;
+        return CemQueryNumCheck.Normal;
     }
 
     @Override
@@ -74,20 +72,20 @@ public class EqualValuePredicate extends ValuePredicate {
         try{
             rightOp=Integer.parseInt(eqVal);
         }catch (NumberFormatException ex){
-            return MixedNumWithStr;
+            return CemQueryNumCheck.MixedNumWithStr;
         }
         int leftLow = Integer.parseInt(left.lowBound);
         int leftHigh = Integer.parseInt(left.upBound);
         if (left.isLeftOpen && rightOp <= leftLow
                 || !left.isLeftOpen && rightOp < leftLow){
-            return OutOfOrder;
+            return CemQueryNumCheck.OutOfOrder;
         }
         if (left.isRightOpen && rightOp < leftHigh
                 || !left.isRightOpen &&rightOp <= leftHigh){
-            return Overlap;
+            return CemQueryNumCheck.Overlap;
         }
 
-        return Normal;
+        return CemQueryNumCheck.Normal;
     }
 
     @Override
@@ -97,13 +95,13 @@ public class EqualValuePredicate extends ValuePredicate {
         try{
             rightOp=Integer.parseInt(eqVal);
         }catch (NumberFormatException ex){
-            return MixedNumWithStr;
+            return CemQueryNumCheck.MixedNumWithStr;
         }
         int leftOp = Integer.parseInt(left.lowBound);
         if (leftOp < rightOp)
-            return Overlap;
+            return CemQueryNumCheck.Overlap;
 
-        return OutOfOrder;
+        return CemQueryNumCheck.OutOfOrder;
     }
 
     @Override

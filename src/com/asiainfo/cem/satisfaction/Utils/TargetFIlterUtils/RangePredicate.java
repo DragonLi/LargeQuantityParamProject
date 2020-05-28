@@ -1,6 +1,6 @@
-package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery;
+package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils;
 
-import static com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.LargeQuantityQuery.CemQueryNumCheck.*;
+import static com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.CemQueryNumCheck.*;
 
 public class RangePredicate extends ValuePredicate {
     public String lowBound;
