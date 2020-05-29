@@ -1,5 +1,7 @@
 package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils;
 
+import java.util.Objects;
+
 public class AboveValuePredicate extends ValuePredicate {
     public String lowBound;
 
@@ -72,14 +74,16 @@ public class AboveValuePredicate extends ValuePredicate {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this)
-            return true;
-        if (obj instanceof AboveValuePredicate){
-            AboveValuePredicate other = (AboveValuePredicate) obj;
-            return other.lowBound.equals(lowBound);
-        }
-        return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AboveValuePredicate that = (AboveValuePredicate) o;
+        return Objects.equals(lowBound, that.lowBound);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(lowBound);
     }
 
     @Override

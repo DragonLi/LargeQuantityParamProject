@@ -201,7 +201,6 @@ public class CemQueryBuilderTest {
         System.out.println("finished");
         /*
          * TODO
-         * 2 type consistence check
          * 3 多选参数组合时分段的合并
          * 4 测试:多选参数重复,顺序,边缘重叠和覆盖等(CemQueryNumValOverlap); 默认参数设置;多选参数组合时分段的合并
          */

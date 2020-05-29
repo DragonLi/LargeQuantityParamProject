@@ -1,5 +1,7 @@
 package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils;
 
+import java.util.Objects;
+
 import static com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.CemQueryNumCheck.*;
 
 public class OpenCloseRangePredicate extends ValuePredicate {
@@ -99,15 +101,19 @@ public class OpenCloseRangePredicate extends ValuePredicate {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this)
-            return true;
-        if (obj instanceof OpenCloseRangePredicate){
-            OpenCloseRangePredicate other = (OpenCloseRangePredicate) obj;
-            return other.lowBound.equals(lowBound) && other.upBound.equals(upBound)
-                    && (!other.isLeftOpen ^ isLeftOpen) && (!other.isRightOpen ^ isRightOpen);
-        }
-        return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OpenCloseRangePredicate that = (OpenCloseRangePredicate) o;
+        return isLeftOpen == that.isLeftOpen &&
+                isRightOpen == that.isRightOpen &&
+                Objects.equals(lowBound, that.lowBound) &&
+                Objects.equals(upBound, that.upBound);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(lowBound, upBound, isLeftOpen, isRightOpen);
     }
 
     @Override

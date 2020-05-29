@@ -1,5 +1,7 @@
 package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils;
 
+import java.util.Objects;
+
 import static com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.CemQueryNumCheck.*;
 
 public class RangePredicate extends ValuePredicate {
@@ -84,14 +86,17 @@ public class RangePredicate extends ValuePredicate {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this)
-            return true;
-        if (obj instanceof RangePredicate){
-            RangePredicate other = (RangePredicate) obj;
-            return other.lowBound.equals(lowBound) && other.upBound.equals(upBound) ;
-        }
-        return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RangePredicate that = (RangePredicate) o;
+        return Objects.equals(lowBound, that.lowBound) &&
+                Objects.equals(upBound, that.upBound);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(lowBound, upBound);
     }
 
     @Override

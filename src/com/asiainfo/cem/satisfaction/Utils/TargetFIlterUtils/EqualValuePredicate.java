@@ -1,5 +1,7 @@
 package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils;
 
+import java.util.Objects;
+
 public class EqualValuePredicate extends ValuePredicate {
     public String eqVal;
     public String replace;
@@ -18,7 +20,7 @@ public class EqualValuePredicate extends ValuePredicate {
 
     @Override
     public String toString() {
-        return "="+eqVal;
+        return (replace != null?replace:"")+"="+eqVal;
     }
 
     @Override
@@ -118,14 +120,19 @@ public class EqualValuePredicate extends ValuePredicate {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this)
-            return true;
-        if (obj instanceof EqualValuePredicate){
-            EqualValuePredicate other = (EqualValuePredicate) obj;
-            return other.eqVal.equals(eqVal);
-        }
-        return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        EqualValuePredicate that = (EqualValuePredicate) o;
+
+        if (!Objects.equals(eqVal, that.eqVal)) return false;
+        return Objects.equals(replace, that.replace);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(eqVal,replace);
     }
 
     @Override

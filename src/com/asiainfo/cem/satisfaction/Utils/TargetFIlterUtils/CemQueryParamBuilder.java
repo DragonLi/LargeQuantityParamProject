@@ -11,7 +11,23 @@ public class CemQueryParamBuilder {
     private final CemQueryParamCfg[] satParamList;
     private final int[] requiredFieldIndLst;
 
+    public static List<CemQueryParamCfg> compact(List<CemQueryParamCfg> pLst){
+        HashMap<ValuePredicate,ValuePredicate> predSet = new HashMap<>(pLst.size());
+        for (CemQueryParamCfg cfg : pLst) {
+            ValuePredicate[] predLst = cfg.valueMap;
+            for (int k = 0, predLen = predLst.length; k < predLen; k++) {
+                ValuePredicate pred = predSet.get(predLst[k]);
+                if (pred != null)
+                    predLst[k] = pred;
+                else
+                    predSet.put(predLst[k], predLst[k]);
+            }
+        }
+        return pLst;
+    }
+
     public CemQueryParamBuilder(List<CemQueryParamCfg> pLst){
+        pLst = compact(pLst);
         CemQueryParamCfg[] array = new CemQueryParamCfg[pLst.size()];
         pLst.toArray(array);
         this.satParamList = array;
