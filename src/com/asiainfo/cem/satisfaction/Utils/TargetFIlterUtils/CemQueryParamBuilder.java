@@ -22,6 +22,7 @@ public class CemQueryParamBuilder {
                 else
                     predSet.put(predLst[k], predLst[k]);
             }
+            cfg.buildMergedPredLst();
         }
         return pLst;
     }

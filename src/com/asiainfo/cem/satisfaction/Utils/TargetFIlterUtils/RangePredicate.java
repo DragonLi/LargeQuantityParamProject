@@ -131,4 +131,34 @@ public class RangePredicate extends ValuePredicate {
         result.eqVal = lowBound;
         return result;
     }
+
+    @Override
+    public ValuePredicate merge(ValuePredicate predicate) {
+        return predicate.mergeWith(this);
+    }
+
+    @Override
+    protected ValuePredicate mergeWith(EqualValuePredicate left) {
+        return null;
+    }
+
+    @Override
+    protected ValuePredicate mergeWith(RangePredicate left) {
+        return null;
+    }
+
+    @Override
+    protected ValuePredicate mergeWith(AboveValuePredicate left) {
+        return null;
+    }
+
+    @Override
+    protected ValuePredicate mergeWith(OpenCloseRangePredicate left) {
+        return null;
+    }
+
+    @Override
+    protected ValuePredicate mergeWith(CompositePredicate left) {
+        return null;
+    }
 }

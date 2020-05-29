@@ -10,6 +10,7 @@ public class CemQueryParamCfg {
     public ValuePredicate[] valueMap;
     public CemQueryParamCompositionMode mode;
     public QueryFieldType fTy;
+    private ValuePredicate[][] mergedPredLst;
 
     @Override
     public String toString() {
@@ -69,6 +70,9 @@ public class CemQueryParamCfg {
             }
                 break;
             case OrMultipartAnd:{
+                if (mergedPredLst != null){
+                    //TODO using long as bit mask
+                }
                 for (int i = 0; i < valCount; i++) {
                     if (i != 0)
                         buffer.append(" or ");
@@ -101,5 +105,39 @@ public class CemQueryParamCfg {
                 return valuePredicate.normalizedVal(val);
         }
         return val;
+    }
+
+    public void buildMergedPredLst(){
+        if (mergedPredLst != null)
+            return;
+        if (mode != CemQueryParamCompositionMode.OrMultipartAnd)
+            return;
+        if (fTy != QueryFieldType.TyInt && fTy != QueryFieldType.TyFloat)
+            return;
+        int valCount = valueMap.length;
+        if (valCount <= 1)
+            return;
+        ValuePredicate[][] merged = new ValuePredicate[valCount][];
+        for (int i = 0; i < valCount; i++) {
+            ValuePredicate[] current = merged[i] = new ValuePredicate[valCount - i];
+            ValuePredicate accumulator = current[0]=valueMap[i];
+            for (int j = 1,len=current.length; j < len; j++) {
+                current[j]=accumulator=accumulator.merge(valueMap[j+i]);
+            }
+        }
+        mergedPredLst = merged;
+    }
+
+    public String showMergedPredLst(){
+        if (mergedPredLst == null)
+            return "NA";
+        String result = "";
+        for (ValuePredicate[] lst : mergedPredLst) {
+            for (ValuePredicate pred : lst) {
+                result += lst+";";
+            }
+            result += "|";
+        }
+        return result;
     }
 }

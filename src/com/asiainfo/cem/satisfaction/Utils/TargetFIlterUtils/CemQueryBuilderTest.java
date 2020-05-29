@@ -198,6 +198,11 @@ public class CemQueryBuilderTest {
         System.out.println("SatParamConfig.json written");
         CemQueryParamManager mgr = new CemQueryParamManager();
         mgr.init();
+
+        List<CemQueryParamCfg> lst = CemQueryParamBuilder.compact(Arrays.asList(cfgLst));
+        for (CemQueryParamCfg cfg : lst) {
+            System.out.println(cfg.showMergedPredLst());
+        }
         System.out.println("finished");
         /*
          * TODO
