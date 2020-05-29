@@ -7,6 +7,7 @@ import java.util.*;
  */
 public class CemQueryParamBuilder {
     private final Map<String, Integer> satParamMap;
+    private final Map<String,Integer> dbParamMap;
     private final CemQueryParamCfg[] satParamList;
     private final int[] requiredFieldIndLst;
 
@@ -15,14 +16,17 @@ public class CemQueryParamBuilder {
         pLst.toArray(array);
         this.satParamList = array;
         Map<String,Integer> map = new HashMap<>(pLst.size());
+        Map<String, Integer> dbMap = new HashMap<>(pLst.size());
         List<Integer> requiredFieldIndexLst = new ArrayList<>();
         for (int i = 0; i < array.length; i++) {
             CemQueryParamCfg paramCfg = array[i];
             map.put(paramCfg.name,i);
+            dbMap.put(paramCfg.dbFieldName,i);
             if (paramCfg.isRequired)
                 requiredFieldIndexLst.add(i);
         }
         this.satParamMap = map;
+        dbParamMap = dbMap;
 
         int[] requiredFieldIndLst = new int[requiredFieldIndexLst.size()];
         for (int i = 0; i < requiredFieldIndexLst.size(); i++) {
@@ -60,7 +64,9 @@ public class CemQueryParamBuilder {
     public CemQueryParamCfg[] getNormalizerLst(List<String> outLst){
         CemQueryParamCfg[] result = new CemQueryParamCfg[outLst.size()];
         for (int i = 0; i < result.length; i++) {
-            Integer index = satParamMap.get(outLst.get(i));
+            Integer index = dbParamMap.get(outLst.get(i));
+            if (index == null)
+                continue;
             int ind = index;
             result[i] = satParamList[ind];
         }
