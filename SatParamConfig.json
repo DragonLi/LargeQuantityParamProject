@@ -1373,4 +1373,58 @@
   } ],
   "mode" : "SingleAnd",
   "fTy" : "TyEnumReplace"
+}, {
+  "name" : "tariffSensitive",
+  "dbFieldName" : "tariffSensitive",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "1",
+    "replace" : "高"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "2",
+    "replace" : "中"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "3",
+    "replace" : "低"
+  } ],
+  "mode" : "SingleAnd",
+  "fTy" : "TyEnumReplace"
+}, {
+  "name" : "onlineQualitySensitive",
+  "dbFieldName" : "onlineQualitySensitive",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "1",
+    "replace" : "高"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "2",
+    "replace" : "中"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "3",
+    "replace" : "低"
+  } ],
+  "mode" : "SingleAnd",
+  "fTy" : "TyEnumReplace"
+}, {
+  "name" : "voiceQualitySensitive",
+  "dbFieldName" : "voiceQualitySensitive",
+  "valueMap" : [ {
+    "typeTag" : "eq",
+    "eqVal" : "1",
+    "replace" : "高"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "2",
+    "replace" : "中"
+  }, {
+    "typeTag" : "eq",
+    "eqVal" : "3",
+    "replace" : "低"
+  } ],
+  "mode" : "SingleAnd",
+  "fTy" : "TyEnumReplace"
 } ]

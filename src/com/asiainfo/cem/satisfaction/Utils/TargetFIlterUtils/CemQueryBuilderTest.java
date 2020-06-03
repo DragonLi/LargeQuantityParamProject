@@ -57,9 +57,9 @@ public class CemQueryBuilderTest {
         Pattern abovePat = Pattern.compile("(\\d+)\\+");
         Pattern enumPat = Pattern.compile("(.+)=(\\d+)?");
         int rowCount = sheet.getLastRowNum();
-        CemQueryParamCfg[] cfgLst = new CemQueryParamCfg[rowCount-1];
+        CemQueryParamCfg[] cfgLst = new CemQueryParamCfg[rowCount];
 
-        for (int i = 1; i < rowCount; i++) {
+        for (int i = 1; i <= rowCount; i++) {
             XSSFRow row = sheet.getRow(i);
             CemQueryParamCfg cfg = new CemQueryParamCfg();
             cfgLst[i-1] = cfg;
@@ -209,6 +209,13 @@ public class CemQueryBuilderTest {
          * 3 多选参数组合时分段的合并
          * 4 测试:多选参数重复,顺序,边缘重叠和覆盖等(CemQueryNumValOverlap); 默认参数设置;多选参数组合时分段的合并
          */
+    }
+
+    @Test
+    public void testMgr(){
+        CemQueryParamManager mgr = new CemQueryParamManager();
+        mgr.init();
+        System.out.println("finished");
     }
 
     private static void CheckRequired(CemQueryParamCfg cfg, String requiredCnt) {
