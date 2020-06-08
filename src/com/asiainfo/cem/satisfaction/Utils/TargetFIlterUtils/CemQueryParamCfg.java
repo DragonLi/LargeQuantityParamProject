@@ -129,6 +129,8 @@ public class CemQueryParamCfg {
             }
         }
         mergedPredLst = merged;
+        System.out.print(show(this.valueMap)+"|");
+        System.out.println(showMergedPredLst());
     }
 
     public String showMergedPredLst(){
@@ -137,7 +139,7 @@ public class CemQueryParamCfg {
         String result = "";
         for (ValuePredicate[] lst : mergedPredLst) {
             for (ValuePredicate pred : lst) {
-                result += lst+";";
+                result += pred+";";
             }
             result += "|";
         }

@@ -50,7 +50,7 @@ public class RangePredicate extends ValuePredicate {
         if (leftOp > high)
             return OutOfOrder;
 
-        return Normal;
+        return leftOp+1 == low ? Normal : LeakFloatGap;
     }
 
     @Override
@@ -61,7 +61,7 @@ public class RangePredicate extends ValuePredicate {
         int rightLow = Integer.parseInt(lowBound);
         int rightHigh= Integer.parseInt(upBound);
         if (leftHigh < rightLow)
-            return Normal;
+            return leftHigh+1 == rightLow ? Normal:LeakFloatGap;
         if (leftHigh == rightLow)
             return EdgeOverlap;
         if (rightHigh < leftLow)
@@ -139,26 +139,32 @@ public class RangePredicate extends ValuePredicate {
 
     @Override
     protected ValuePredicate mergeWith(EqualValuePredicate left) {
-        return null;
+        RangePredicate r = new RangePredicate();
+        r.lowBound=left.eqVal;
+        r.upBound=this.upBound;
+        return r;
     }
 
     @Override
     protected ValuePredicate mergeWith(RangePredicate left) {
-        return null;
+        RangePredicate r = new RangePredicate();
+        r.lowBound=left.lowBound;
+        r.upBound=this.upBound;
+        return r;
     }
 
     @Override
     protected ValuePredicate mergeWith(AboveValuePredicate left) {
-        return null;
+        throw new RuntimeException("bug: range overlap or out of order config");
     }
 
     @Override
     protected ValuePredicate mergeWith(OpenCloseRangePredicate left) {
-        return null;
+        throw new RuntimeException("mix float range with integer range");
     }
 
     @Override
-    protected ValuePredicate mergeWith(CompositePredicate left) {
-        return null;
+    protected ValuePredicate mergeWith(AboveOrEqualPredicate left) {
+        throw new RuntimeException("bug: range overlap or out of order config");
     }
 }

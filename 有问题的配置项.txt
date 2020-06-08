@@ -1,0 +1,8 @@
+警告：浮点数分段不连续：(0-38]和(39-58]配置为：[,total_value,false,total_value,(0-38];(39-58];(59-68];(69-98];(99-168];>168;,OrMultipartAnd,]
+警告：浮点数分段不连续：(39-58]和(59-68]配置为：[,total_value,false,total_value,(0-38];(39-58];(59-68];(69-98];(99-168];>168;,OrMultipartAnd,]
+警告：浮点数分段不连续：(59-68]和(69-98]配置为：[,total_value,false,total_value,(0-38];(39-58];(59-68];(69-98];(99-168];>168;,OrMultipartAnd,]
+警告：浮点数分段不连续：(69-98]和(99-168]配置为：[,total_value,false,total_value,(0-38];(39-58];(59-68];(69-98];(99-168];>168;,OrMultipartAnd,]
+警告：浮点数分段不连续：[0-38]和(39-58]配置为：[,avg_apru_trend,false,avg_apru_trend,[0-38];(39-58];(59-68];(69-98];(99-168];>168;,OrMultipartAnd,]
+警告：浮点数分段不连续：(39-58]和(59-68]配置为：[,avg_apru_trend,false,avg_apru_trend,[0-38];(39-58];(59-68];(69-98];(99-168];>168;,OrMultipartAnd,]
+警告：浮点数分段不连续：(59-68]和(69-98]配置为：[,avg_apru_trend,false,avg_apru_trend,[0-38];(39-58];(59-68];(69-98];(99-168];>168;,OrMultipartAnd,]
+警告：浮点数分段不连续：(69-98]和(99-168]配置为：[,avg_apru_trend,false,avg_apru_trend,[0-38];(39-58];(59-68];(69-98];(99-168];>168;,OrMultipartAnd,]

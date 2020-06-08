@@ -2,19 +2,17 @@ package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils;
 
 import java.util.Objects;
 
-import static com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.CemQueryNumCheck.*;
-
-public class AboveValuePredicate extends ValuePredicate {
+public class AboveOrEqualPredicate extends ValuePredicate {
     public String lowBound;
 
     @Override
     public String toString() {
-        return ">"+lowBound;
+        return ">="+lowBound;
     }
 
     @Override
     public void generateCondition(String dbFieldName, StringBuffer buffer) {
-        buffer.append(dbFieldName).append(" > ").append(lowBound);
+        buffer.append(dbFieldName).append(" >= ").append(lowBound);
     }
 
     @Override
@@ -24,81 +22,44 @@ public class AboveValuePredicate extends ValuePredicate {
 
     @Override
     public CemQueryNumCheck testMergedWith(ValuePredicate other) {
-        return other.testOverlap(this);
+        throw new RuntimeException("bug:");
     }
 
     @Override
     protected CemQueryNumCheck testOverlap(EqualValuePredicate left) {
-        //Normal,EdgeOverlap,Overlap,MixedNumWithStr
-        int leftOp;
-        try{
-            leftOp=Integer.parseInt(left.eqVal);
-        }catch (NumberFormatException ex){
-            return MixedNumWithStr;
-        }
-        int rightLow = Integer.parseInt(lowBound);
-        if (leftOp <= rightLow){
-            return leftOp == rightLow? Normal:LeakFloatGap;
-        }
-        if (leftOp == rightLow+1)
-            return EdgeOverlap;
-        //leftOp > rightLow+1
-        return Overlap;
+        return null;
     }
 
     @Override
     protected CemQueryNumCheck testOverlap(RangePredicate left) {
-        //Normal,EdgeOverlap,Overlap
-        int leftHigh = Integer.parseInt(left.upBound);
-        int rightLow = Integer.parseInt(lowBound);
-        if (leftHigh <= rightLow)
-            return leftHigh == rightLow? Normal:LeakFloatGap;
-        if (leftHigh == rightLow +1)
-            return EdgeOverlap;
-        //leftHigh > rightLow+1
-        return Overlap;
+        return null;
     }
 
     @Override
     protected CemQueryNumCheck testOverlap(AboveValuePredicate left) {
-        return Overlap;
+        return null;
     }
 
     @Override
     protected CemQueryNumCheck testOverlap(OpenCloseRangePredicate left) {
-        //Normal,Overlap
-        int leftHigh = Integer.parseInt(left.upBound);
-        int rightLow = Integer.parseInt(lowBound);
-        if (leftHigh <= rightLow){
-            if (left.isRightOpen)
-                return LeakFloatGap;
-            return leftHigh == rightLow? Normal:LeakFloatGap;
-        }
-        return Overlap;
+        return null;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AboveValuePredicate that = (AboveValuePredicate) o;
-        return Objects.equals(lowBound, that.lowBound);
-    }
+        AboveOrEqualPredicate that = (AboveOrEqualPredicate) o;
+        return Objects.equals(lowBound, that.lowBound);    }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(lowBound);
-    }
-
-    @Override
-    public void increaseLowerBoundNumber() {
-        int low = Integer.parseInt(lowBound);
-        lowBound = String.valueOf(low+1);
+    public boolean checkRange() {
+        return true;
     }
 
     @Override
     public ValuePredicate merge(ValuePredicate predicate) {
-        return predicate.mergeWith(this);
+        return null;
     }
 
     @Override
@@ -135,10 +96,5 @@ public class AboveValuePredicate extends ValuePredicate {
     @Override
     protected ValuePredicate mergeWith(AboveOrEqualPredicate left) {
         throw new RuntimeException("bug: overlap range");
-    }
-
-    @Override
-    public boolean checkRange() {
-        return true;
     }
 }

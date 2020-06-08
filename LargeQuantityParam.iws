@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="d737cf80-52b3-4338-827f-fba671a6fb96" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/LargeQuantityParam.iws" beforeDir="false" afterPath="$PROJECT_DIR$/LargeQuantityParam.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SatParamConfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/SatParamConfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/AboveValuePredicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/AboveValuePredicate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/CemQueryBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/CemQueryBuilderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/重庆多条件组合查询-代码生成配置.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/重庆多条件组合查询-代码生成配置.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/CemQueryParamCfg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/CemQueryParamCfg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/CompositePredicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/AboveOrEqualPredicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/EqualValuePredicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/EqualValuePredicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/OpenCloseRangePredicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/OpenCloseRangePredicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/RangePredicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/RangePredicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/ValuePredicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/ValuePredicate.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +161,10 @@
       <workItem from="1590739372760" duration="2978000" />
       <workItem from="1591175754361" duration="8000" />
       <workItem from="1591176153700" duration="970000" />
+      <workItem from="1591606717705" duration="245000" />
+      <workItem from="1591617338133" duration="319000" />
+      <workItem from="1591618558897" duration="1558000" />
+      <workItem from="1591620209280" duration="3760000" />
     </task>
     <servers />
   </component>
@@ -167,10 +176,10 @@
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
     <state x="410" y="39" width="1430" height="977" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1056@0.0.1920.1056" timestamp="1590650870256" />
-    <state x="674" y="95" width="563" height="881" key="#com.intellij.ide.util.MemberChooser" timestamp="1590741932816">
+    <state x="674" y="95" width="563" height="881" key="#com.intellij.ide.util.MemberChooser" timestamp="1591621245904">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state x="674" y="95" width="563" height="881" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1056@0.0.1920.1056" timestamp="1590741932816" />
+    <state x="674" y="95" width="563" height="881" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1056@0.0.1920.1056" timestamp="1591621245904" />
     <state x="676" y="414" width="568" height="243" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1590589563998">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
@@ -183,62 +192,66 @@
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
     <state x="696" y="299" width="991" height="637" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1920.1056@0.0.1920.1056" timestamp="1590589617675" />
-    <state x="905" y="279" key="#xdebugger.evaluate" timestamp="1590415929427">
+    <state x="473" y="169" key="#xdebugger.evaluate" timestamp="1591622425124">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state x="905" y="279" key="#xdebugger.evaluate/0.0.1920.1056@0.0.1920.1056" timestamp="1590415929427" />
-    <state width="697" height="901" key="DebuggerActiveHint" timestamp="1590736590568">
+    <state x="473" y="169" key="#xdebugger.evaluate/0.0.1920.1056@0.0.1920.1056" timestamp="1591622425124" />
+    <state width="697" height="901" key="DebuggerActiveHint" timestamp="1591623053800">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="697" height="901" key="DebuggerActiveHint/0.0.1920.1056@0.0.1920.1056" timestamp="1590736590568" />
+    <state width="697" height="901" key="DebuggerActiveHint/0.0.1920.1056@0.0.1920.1056" timestamp="1591623053800" />
     <state x="482" y="206" width="1074" height="794" key="FileChooserDialogImpl" timestamp="1590158263076">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
     <state x="482" y="206" width="1074" height="794" key="FileChooserDialogImpl/0.0.1920.1056@0.0.1920.1056" timestamp="1590158263076" />
-    <state width="1838" height="312" key="GridCell.Tab.0.bottom" timestamp="1591177123620">
+    <state width="1838" height="718" key="GridCell.Tab.0.bottom" timestamp="1591623970137">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1838" height="312" key="GridCell.Tab.0.bottom/0.0.1920.1056@0.0.1920.1056" timestamp="1591177123620" />
-    <state width="1838" height="312" key="GridCell.Tab.0.center" timestamp="1591177123620">
+    <state width="1838" height="718" key="GridCell.Tab.0.bottom/0.0.1920.1056@0.0.1920.1056" timestamp="1591623970137" />
+    <state width="1838" height="718" key="GridCell.Tab.0.center" timestamp="1591623970137">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1838" height="312" key="GridCell.Tab.0.center/0.0.1920.1056@0.0.1920.1056" timestamp="1591177123620" />
-    <state width="1838" height="312" key="GridCell.Tab.0.left" timestamp="1591177123620">
+    <state width="1838" height="718" key="GridCell.Tab.0.center/0.0.1920.1056@0.0.1920.1056" timestamp="1591623970137" />
+    <state width="1838" height="718" key="GridCell.Tab.0.left" timestamp="1591623970137">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1838" height="312" key="GridCell.Tab.0.left/0.0.1920.1056@0.0.1920.1056" timestamp="1591177123620" />
-    <state width="1838" height="312" key="GridCell.Tab.0.right" timestamp="1591177123620">
+    <state width="1838" height="718" key="GridCell.Tab.0.left/0.0.1920.1056@0.0.1920.1056" timestamp="1591623970137" />
+    <state width="1838" height="718" key="GridCell.Tab.0.right" timestamp="1591623970137">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1838" height="312" key="GridCell.Tab.0.right/0.0.1920.1056@0.0.1920.1056" timestamp="1591177123620" />
-    <state width="1838" height="362" key="GridCell.Tab.1.bottom" timestamp="1591177123616">
+    <state width="1838" height="718" key="GridCell.Tab.0.right/0.0.1920.1056@0.0.1920.1056" timestamp="1591623970137" />
+    <state width="1838" height="718" key="GridCell.Tab.1.bottom" timestamp="1591623970138">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1838" height="362" key="GridCell.Tab.1.bottom/0.0.1920.1056@0.0.1920.1056" timestamp="1591177123616" />
-    <state width="1838" height="362" key="GridCell.Tab.1.center" timestamp="1591177123615">
+    <state width="1838" height="718" key="GridCell.Tab.1.bottom/0.0.1920.1056@0.0.1920.1056" timestamp="1591623970138" />
+    <state width="1838" height="718" key="GridCell.Tab.1.center" timestamp="1591623970137">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1838" height="362" key="GridCell.Tab.1.center/0.0.1920.1056@0.0.1920.1056" timestamp="1591177123615" />
-    <state width="1838" height="362" key="GridCell.Tab.1.left" timestamp="1591177123615">
+    <state width="1838" height="718" key="GridCell.Tab.1.center/0.0.1920.1056@0.0.1920.1056" timestamp="1591623970137" />
+    <state width="1838" height="718" key="GridCell.Tab.1.left" timestamp="1591623970137">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1838" height="362" key="GridCell.Tab.1.left/0.0.1920.1056@0.0.1920.1056" timestamp="1591177123615" />
-    <state width="1838" height="362" key="GridCell.Tab.1.right" timestamp="1591177123616">
+    <state width="1838" height="718" key="GridCell.Tab.1.left/0.0.1920.1056@0.0.1920.1056" timestamp="1591623970137" />
+    <state width="1838" height="718" key="GridCell.Tab.1.right" timestamp="1591623970138">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1838" height="362" key="GridCell.Tab.1.right/0.0.1920.1056@0.0.1920.1056" timestamp="1591177123616" />
+    <state width="1838" height="718" key="GridCell.Tab.1.right/0.0.1920.1056@0.0.1920.1056" timestamp="1591623970138" />
     <state x="187" y="0" width="1538" height="1056" key="SettingsEditor" timestamp="1590158263678">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
     <state x="187" y="0" width="1538" height="1056" key="SettingsEditor/0.0.1920.1056@0.0.1920.1056" timestamp="1590158263678" />
+    <state width="960" height="528" key="XDebugger.FullValuePopup" timestamp="1591622583846">
+      <screen x="0" y="0" width="1920" height="1056" />
+    </state>
+    <state width="960" height="528" key="XDebugger.FullValuePopup/0.0.1920.1056@0.0.1920.1056" timestamp="1591622583846" />
     <state x="72" y="0" width="1767" height="1056" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590158762468">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
     <state x="72" y="0" width="1767" height="1056" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1056@0.0.1920.1056" timestamp="1590158762468" />
-    <state x="255" y="0" width="1401" height="1051" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1591176907673">
+    <state x="255" y="0" width="1401" height="1051" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1591622781907">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state x="255" y="0" width="1401" height="1051" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1056@0.0.1920.1056" timestamp="1591176907673" />
+    <state x="255" y="0" width="1401" height="1051" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1056@0.0.1920.1056" timestamp="1591622781907" />
     <state x="538" y="61" width="898" height="936" key="find.popup" timestamp="1590741519914">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
@@ -255,16 +268,5 @@
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
     <state x="455" y="0" width="1009" height="1052" key="search.everywhere.popup/0.0.1920.1056@0.0.1920.1056" timestamp="1590736242742" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/CemQueryBuilderTest.java</url>
-          <line>201</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -26,27 +26,38 @@ public class EqualValuePredicate extends ValuePredicate {
 
     @Override
     protected ValuePredicate mergeWith(EqualValuePredicate left) {
-        return null;
+        RangePredicate r = new RangePredicate();
+        r.lowBound=left.eqVal;
+        r.upBound=this.eqVal;
+        return r;
     }
 
     @Override
     protected ValuePredicate mergeWith(RangePredicate left) {
-        return null;
+        RangePredicate r = new RangePredicate();
+        r.lowBound=left.lowBound;
+        r.upBound=this.eqVal;
+        return r;
     }
 
     @Override
     protected ValuePredicate mergeWith(AboveValuePredicate left) {
-        return null;
+        throw new RuntimeException("bug: overlap range");
     }
 
     @Override
     protected ValuePredicate mergeWith(OpenCloseRangePredicate left) {
-        return null;
+        OpenCloseRangePredicate r = new OpenCloseRangePredicate();
+        r.isLeftOpen=left.isLeftOpen;
+        r.lowBound=left.lowBound;
+        r.isRightOpen=false;
+        r.upBound=this.eqVal;
+        return r;
     }
 
     @Override
-    protected ValuePredicate mergeWith(CompositePredicate left) {
-        return null;
+    protected ValuePredicate mergeWith(AboveOrEqualPredicate left) {
+        throw new RuntimeException("bug: overlap range");
     }
 
     @Override
@@ -92,6 +103,7 @@ public class EqualValuePredicate extends ValuePredicate {
                 || rightOp != Integer.MIN_VALUE && leftOp == Integer.MIN_VALUE){
             return MixedNumWithStr;
         }
+        //TODO unless context passing whether is floating number predicate, you can't decide it is LeakFloatGap or not
         return Normal;
     }
 
@@ -108,7 +120,7 @@ public class EqualValuePredicate extends ValuePredicate {
         int high = Integer.parseInt(left.upBound);
         if (high >= rightOp)
             return OutOfOrder;
-        return Normal;
+        return high+1 == rightOp ? Normal : LeakFloatGap;
     }
 
     @Override
@@ -131,7 +143,7 @@ public class EqualValuePredicate extends ValuePredicate {
             return Overlap;
         }
 
-        return Normal;
+        return left.isRightOpen &&rightOp == leftHigh ? Normal:LeakFloatGap;
     }
 
     @Override

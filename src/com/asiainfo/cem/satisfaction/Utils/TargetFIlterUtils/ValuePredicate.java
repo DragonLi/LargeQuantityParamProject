@@ -41,11 +41,12 @@ public abstract class ValuePredicate {
         return false;
     }
 
+    //暴力合并，不连续的分段会直接合并成连续区域
     public abstract ValuePredicate merge(ValuePredicate predicate);
     //double dispatch
     protected abstract ValuePredicate mergeWith(EqualValuePredicate left);
     protected abstract ValuePredicate mergeWith(RangePredicate left);
     protected abstract ValuePredicate mergeWith(AboveValuePredicate left);
     protected abstract ValuePredicate mergeWith(OpenCloseRangePredicate left);
-    protected abstract ValuePredicate mergeWith(CompositePredicate left);
+    protected abstract ValuePredicate mergeWith(AboveOrEqualPredicate left);
 }

@@ -199,13 +199,14 @@ public class CemQueryBuilderTest {
         CemQueryParamManager mgr = new CemQueryParamManager();
         mgr.init();
 
-        List<CemQueryParamCfg> lst = CemQueryParamBuilder.compact(Arrays.asList(cfgLst));
+        /*List<CemQueryParamCfg> lst = CemQueryParamBuilder.compact(Arrays.asList(cfgLst));
         for (CemQueryParamCfg cfg : lst) {
             System.out.println(cfg.showMergedPredLst());
-        }
+        }*/
         System.out.println("finished");
         /*
          * TODO
+         * 2 LeakFloatGap checking
          * 3 多选参数组合时分段的合并
          * 4 测试:多选参数重复,顺序,边缘重叠和覆盖等(CemQueryNumValOverlap); 默认参数设置;多选参数组合时分段的合并
          */
@@ -271,8 +272,8 @@ public class CemQueryBuilderTest {
                 case MixedNumWithStr:
                     throw new RuntimeException("mixing number choice with string choice is not supported:"+cfg);
                 case LeakFloatGap:
-                    throw new RuntimeException("float range is not continuous: "+cfg+
-                            "\nyou can comment out this exception in source code if that is desired");
+                    System.out.println("警告：浮点数分段不连续："+merged+"和"+other+"配置为："+cfg);
+                    break;
                 case MixedFloatRangeWithIntRange:
                     throw new RuntimeException("mixing float range with int range is not supported:"+cfg);
             }

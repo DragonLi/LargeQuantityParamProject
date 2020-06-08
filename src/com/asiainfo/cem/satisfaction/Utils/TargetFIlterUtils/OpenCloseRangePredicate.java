@@ -57,7 +57,7 @@ public class OpenCloseRangePredicate extends ValuePredicate {
         if (isRightOpen? leftOp>= high : leftOp > high)
             return OutOfOrder;
 
-        return Normal;
+        return leftOp == low? Normal:LeakFloatGap;
     }
 
     @Override
@@ -89,7 +89,7 @@ public class OpenCloseRangePredicate extends ValuePredicate {
         int rightHigh= Integer.parseInt(upBound);
         if (leftHigh < rightLow
                 || leftHigh == rightLow && (isLeftOpen || left.isRightOpen))
-            return Normal;
+            return leftHigh == rightLow?Normal:LeakFloatGap;
 
         if (leftHigh == rightLow)//when reached isLeftOpen and left.isRightOpen are both false
             return EdgeOverlap;
@@ -130,27 +130,37 @@ public class OpenCloseRangePredicate extends ValuePredicate {
 
     @Override
     protected ValuePredicate mergeWith(EqualValuePredicate left) {
-        return null;
+        OpenCloseRangePredicate result = new OpenCloseRangePredicate();
+        result.isLeftOpen=false;
+        result.lowBound=left.eqVal;
+        result.isRightOpen=this.isRightOpen;
+        result.upBound=this.upBound;
+        return result;
     }
 
     @Override
     protected ValuePredicate mergeWith(RangePredicate left) {
-        return null;
+        throw new RuntimeException("bug: mix float range with integer range");
     }
 
     @Override
     protected ValuePredicate mergeWith(AboveValuePredicate left) {
-        return null;
+        throw new RuntimeException("bug: range overlap or out of order config");
     }
 
     @Override
     protected ValuePredicate mergeWith(OpenCloseRangePredicate left) {
-        return null;
+        OpenCloseRangePredicate result = new OpenCloseRangePredicate();
+        result.isLeftOpen=left.isLeftOpen;
+        result.lowBound=left.lowBound;
+        result.isRightOpen=this.isRightOpen;
+        result.upBound=this.upBound;
+        return result;
     }
 
     @Override
-    protected ValuePredicate mergeWith(CompositePredicate left) {
-        return null;
+    protected ValuePredicate mergeWith(AboveOrEqualPredicate left) {
+        throw new RuntimeException("bug: range overlap or out of order config");
     }
 
     @Override
