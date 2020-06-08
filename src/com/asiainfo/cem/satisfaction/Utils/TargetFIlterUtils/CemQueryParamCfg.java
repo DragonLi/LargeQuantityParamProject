@@ -73,6 +73,9 @@ public class CemQueryParamCfg {
                 if (mergedPredLst != null){
                     //TODO using long as bit mask
                 }
+                if (valueMap.length < valCount){
+                    valCount = valueMap.length;
+                }
                 for (int i = 0; i < valCount; i++) {
                     if (i != 0)
                         buffer.append(" or ");
