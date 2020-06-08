@@ -1,5 +1,7 @@
 package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CemQueryParamCfg {
@@ -70,16 +72,17 @@ public class CemQueryParamCfg {
             }
                 break;
             case OrMultipartAnd:{
-                if (mergedPredLst != null){
-                    //TODO using long as bit mask
-                }
-                if (valueMap.length < valCount){
-                    valCount = valueMap.length;
-                }
-                for (int i = 0; i < valCount; i++) {
-                    if (i != 0)
-                        buffer.append(" or ");
-                    processOneParameter(buffer, values.get(i));
+                if (mergedPredLst != null && valCount > 1){
+                    genViaMergedPredLst(buffer, values);
+                }else{
+                    if (valueMap.length < valCount){
+                        valCount = valueMap.length;
+                    }
+                    for (int i = 0; i < valCount; i++) {
+                        if (i != 0)
+                            buffer.append(" or ");
+                        processOneParameter(buffer, values.get(i));
+                    }
                 }
             }
                 break;
@@ -91,11 +94,53 @@ public class CemQueryParamCfg {
         }
     }
 
+    public void genViaMergedPredLst(StringBuffer buffer, List<Integer> values) {
+        int[] tmp = new int[values.size()];
+        int valCount=0;
+        for (int i = 0; i < tmp.length; i++) {
+            Integer ind = values.get(i);
+            if (ind == null)
+                continue;
+            int k = ind;
+            if (k<0 || k >= valueMap.length)
+                continue;
+            tmp[valCount] = k;
+            ++valCount;
+        }
+        Arrays.sort(tmp);
+
+        int startInd = 0;
+        int endInd = 1;
+        while (endInd < valCount){
+            int y = tmp[endInd - 1];
+            if (tmp[endInd] != y +1){
+                int x = tmp[startInd];
+                ValuePredicate pred = mergedPredLst[x][y-x];
+                if (startInd != 0)
+                    buffer.append(" or ");
+                pred.generateCondition(dbFieldName,buffer);
+                startInd = endInd;
+            }
+            endInd++;
+        }
+        if (startInd < valCount -1){
+            int x = tmp[startInd];
+            int y = tmp[endInd - 1];
+            ValuePredicate pred = mergedPredLst[x][y-x];
+            if (startInd != 0)
+                buffer.append(" or ");
+            pred.generateCondition(dbFieldName,buffer);
+        }
+    }
+
     private void processOneParameter(StringBuffer buffer, Integer value) {
         if (value == null) {
             throw new RuntimeException("No value for index:" + value);
         }
         int ind = value;
+        if (ind <0 || ind >= valueMap.length){
+            return;
+        }
         ValuePredicate fieldPred = valueMap[ind];
         fieldPred.generateCondition(dbFieldName,buffer);
     }

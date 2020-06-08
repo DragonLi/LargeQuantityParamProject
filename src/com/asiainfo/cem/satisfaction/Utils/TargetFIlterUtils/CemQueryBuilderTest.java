@@ -198,6 +198,46 @@ public class CemQueryBuilderTest {
         System.out.println("SatParamConfig.json written");
         CemQueryParamManager mgr = new CemQueryParamManager();
         mgr.init();
+        List<CemQueryParam> testParamLst = new ArrayList<>();
+        {
+            testParamLst.clear();
+            CemQueryParam param = new CemQueryParam();
+            param.name="age";
+            ArrayList<Integer> values = new ArrayList<>();
+            values.add(0);
+            values.add(1);
+            param.values = values;
+            testParamLst.add(param);
+            System.out.println(param);
+            System.out.println(mgr.compose(testParamLst));
+        }
+        {
+            testParamLst.clear();
+            CemQueryParam param = new CemQueryParam();
+            param.name="age";
+            ArrayList<Integer> values = new ArrayList<>();
+            values.add(0);
+            values.add(2);
+            values.add(3);
+            param.values = values;
+            testParamLst.add(param);
+            System.out.println(param);
+            System.out.println(mgr.compose(testParamLst));
+        }
+        {
+            testParamLst.clear();
+            CemQueryParam param = new CemQueryParam();
+            param.name="age";
+            ArrayList<Integer> values = new ArrayList<>();
+            values.add(0);
+            values.add(1);
+            values.add(2);
+            values.add(3);
+            param.values = values;
+            testParamLst.add(param);
+            System.out.println(param);
+            System.out.println(mgr.compose(testParamLst));
+        }
 
         /*List<CemQueryParamCfg> lst = CemQueryParamBuilder.compact(Arrays.asList(cfgLst));
         for (CemQueryParamCfg cfg : lst) {
