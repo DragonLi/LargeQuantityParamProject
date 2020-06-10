@@ -207,6 +207,14 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="lombok-1.16.18">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.16.18/lombok-1.16.18.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="poi-ooxml-3.17">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi-ooxml/3.17/poi-ooxml-3.17.jar!/" />

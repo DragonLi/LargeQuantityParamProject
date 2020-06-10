@@ -37,7 +37,7 @@ public class CemQueryParamBuilder {
         List<Integer> requiredFieldIndexLst = new ArrayList<>();
         for (int i = 0; i < array.length; i++) {
             CemQueryParamCfg paramCfg = array[i];
-            map.put(paramCfg.name,i);
+            map.put(paramCfg.name.toLowerCase(),i);
             dbMap.put(paramCfg.dbFieldName,i);
             if (paramCfg.isRequired)
                 requiredFieldIndexLst.add(i);

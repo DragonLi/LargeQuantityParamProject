@@ -1,9 +1,11 @@
 package com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils;
 
-import java.util.ArrayList;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Arrays;
 import java.util.List;
 
+@Slf4j
 public class CemQueryParamCfg {
     public String name;
     public boolean isRequired;
@@ -20,11 +22,11 @@ public class CemQueryParamCfg {
     }
 
     private String show(ValuePredicate[] valueMap) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (ValuePredicate predicate : valueMap) {
-            result += predicate+";";
+            result.append(predicate).append(";");
         }
-        return result;
+        return result.toString();
     }
 
     //for json
@@ -70,22 +72,46 @@ public class CemQueryParamCfg {
                 }
                 processOneParameter(buffer, values.get(0));
             }
-                break;
+            break;
             case OrMultipartAnd:{
-                if (mergedPredLst != null && valCount > 1){
-                    genViaMergedPredLst(buffer, values);
+                if (valCount == 1){
+                    processOneParameter(buffer,values.get(0));
                 }else{
-                    if (valueMap.length < valCount){
-                        valCount = valueMap.length;
+                    int[] tmp = new int[values.size()];
+                    valCount=0;
+                    for (int i = 0; i < tmp.length; i++) {
+                        Integer ind = values.get(i);
+                        if (ind == null) {
+                            //log.warn("前端传输的参数是空的："+name+" 索引是："+i);
+                            continue;
+                        }
+                        int k = ind;
+                        if (k<0 || k >= valueMap.length) {
+                            //log.warn("前端传输的参数超出范围："+name+" 索引是："+k);
+                            continue;
+                        }
+                        if (contains(tmp,valCount,k)){
+                            //log.warn("前端传输了重复的值："+k+" 字段是："+name);
+                            continue;
+                        }
+                        tmp[valCount] = k;
+                        ++valCount;
                     }
-                    for (int i = 0; i < valCount; i++) {
-                        if (i != 0)
+                    Arrays.sort(tmp,0,valCount);
+                    if (mergedPredLst != null){
+                        genViaMergedPredLst(buffer, tmp, valCount);
+                    }else{
+                        ValuePredicate fieldPred = valueMap[tmp[0]];
+                        fieldPred.generateCondition(dbFieldName,buffer);
+                        for (int i = 1; i < valCount; i++) {
                             buffer.append(" or ");
-                        processOneParameter(buffer, values.get(i));
+                            fieldPred = valueMap[tmp[i]];
+                            fieldPred.generateCondition(dbFieldName,buffer);
+                        }
                     }
                 }
             }
-                break;
+            break;
             default:
                 throw new RuntimeException("bug! unsupported mode:"+mode);
         }
@@ -94,21 +120,15 @@ public class CemQueryParamCfg {
         }
     }
 
-    public void genViaMergedPredLst(StringBuffer buffer, List<Integer> values) {
-        int[] tmp = new int[values.size()];
-        int valCount=0;
-        for (int i = 0; i < tmp.length; i++) {
-            Integer ind = values.get(i);
-            if (ind == null)
-                continue;
-            int k = ind;
-            if (k<0 || k >= valueMap.length)
-                continue;
-            tmp[valCount] = k;
-            ++valCount;
+    private boolean contains(int[] lst, int size, int v){
+        for (int i = size - 1; i >= 0; i--) {
+            if (lst[i] == v)
+                return true;
         }
-        Arrays.sort(tmp);
+        return false;
+    }
 
+    private void genViaMergedPredLst(StringBuffer buffer, int[] tmp, int valCount) {
         int startInd = 0;
         int endInd = 1;
         while (endInd < valCount){
@@ -135,10 +155,12 @@ public class CemQueryParamCfg {
 
     private void processOneParameter(StringBuffer buffer, Integer value) {
         if (value == null) {
-            throw new RuntimeException("No value for index:" + value);
+            //log.warn("前端传输的参数是空的："+name);
+            return;
         }
         int ind = value;
         if (ind <0 || ind >= valueMap.length){
+            //log.warn("前端传输的参数超出范围："+name+" 索引是："+k);
             return;
         }
         ValuePredicate fieldPred = valueMap[ind];
@@ -181,13 +203,13 @@ public class CemQueryParamCfg {
     public String showMergedPredLst(){
         if (mergedPredLst == null)
             return "NA";
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (ValuePredicate[] lst : mergedPredLst) {
             for (ValuePredicate pred : lst) {
-                result += pred+";";
+                result.append(pred).append(";");
             }
-            result += "|";
+            result.append("|");
         }
-        return result;
+        return result.toString();
     }
 }
