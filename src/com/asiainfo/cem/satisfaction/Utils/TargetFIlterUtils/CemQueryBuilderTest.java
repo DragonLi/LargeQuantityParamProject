@@ -202,6 +202,19 @@ public class CemQueryBuilderTest {
         {
             testParamLst.clear();
             CemQueryParam param = new CemQueryParam();
+            param.name="weixin_app_flow";
+            ArrayList<Integer> values = new ArrayList<>();
+            values.add(1);
+            values.add(2);
+            values.add(4);
+            param.values = values;
+            testParamLst.add(param);
+            System.out.println(param);
+            System.out.println(mgr.compose(testParamLst));
+        }
+        {
+            testParamLst.clear();
+            CemQueryParam param = new CemQueryParam();
             param.name="age";
             ArrayList<Integer> values = new ArrayList<>();
             values.add(0);
