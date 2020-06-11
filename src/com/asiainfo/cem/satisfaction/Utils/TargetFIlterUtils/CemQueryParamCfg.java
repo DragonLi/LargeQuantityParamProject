@@ -134,23 +134,19 @@ public class CemQueryParamCfg {
         while (endInd < valCount){
             int y = tmp[endInd - 1];
             if (tmp[endInd] != y +1){
-                int x = tmp[startInd];
-                ValuePredicate pred = mergedPredLst[x][y-x];
-                if (startInd != 0)
-                    buffer.append(" or ");
-                pred.generateCondition(dbFieldName,buffer);
+                genHelper(buffer, startInd, y, tmp[startInd]);
                 startInd = endInd;
             }
             endInd++;
         }
-        if (startInd < valCount -1){
-            int x = tmp[startInd];
-            int y = tmp[endInd - 1];
-            ValuePredicate pred = mergedPredLst[x][y-x];
-            if (startInd != 0)
-                buffer.append(" or ");
-            pred.generateCondition(dbFieldName,buffer);
-        }
+        genHelper(buffer, startInd, tmp[endInd - 1], tmp[startInd]);
+    }
+
+    private void genHelper(StringBuffer buffer, int startInd, int y, int x) {
+        ValuePredicate pred = mergedPredLst[x][y - x];
+        if (startInd != 0)
+            buffer.append(" or ");
+        pred.generateCondition(dbFieldName, buffer);
     }
 
     private void processOneParameter(StringBuffer buffer, Integer value) {
