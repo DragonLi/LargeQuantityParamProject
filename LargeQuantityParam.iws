@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d737cf80-52b3-4338-827f-fba671a6fb96" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/LargeQuantityParam.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/LargeQuantityParam.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LargeQuantityParam.iws" beforeDir="false" afterPath="$PROJECT_DIR$/LargeQuantityParam.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/CemQueryBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/CemQueryBuilderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/CemQueryParamCfg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/CemQueryParamCfg.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +17,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -43,7 +41,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="public" />
-    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ObjectAlgebra/Java" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,7 +64,7 @@
       <recent name="com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CemQueryBuilderTest.testExcel">
+  <component name="RunManager" selected="JUnit.PredSqlOATest.Test">
     <configuration name="CemQueryBuilderTest.testExcel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LargeQuantityParam" />
       <extension name="coverage">
@@ -101,6 +99,23 @@
         <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PredSqlOATest.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LargeQuantityParam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.objectalgebra.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.objectalgebra" />
+      <option name="MAIN_CLASS_NAME" value="com.asiainfo.cem.satisfaction.Utils.TargetFIlterUtils.objectalgebra.PredSqlOATest" />
+      <option name="METHOD_NAME" value="Test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
@@ -119,14 +134,19 @@
       <item itemvalue="Java Scratch.Scratch" />
       <item itemvalue="JUnit.CemQueryBuilderTest.testExcel" />
       <item itemvalue="JUnit.CemQueryBuilderTest.testMgr" />
+      <item itemvalue="JUnit.PredSqlOATest.Test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PredSqlOATest.Test" />
         <item itemvalue="JUnit.CemQueryBuilderTest.testExcel" />
         <item itemvalue="JUnit.CemQueryBuilderTest.testMgr" />
         <item itemvalue="Java Scratch.Scratch" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -165,6 +185,7 @@
       <workItem from="1591759925041" duration="310000" />
       <workItem from="1591865131824" duration="1076000" />
       <workItem from="1591866724825" duration="234000" />
+      <workItem from="1592661974211" duration="4115000" />
     </task>
     <servers />
   </component>
@@ -176,10 +197,10 @@
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
     <state x="410" y="39" width="1430" height="977" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1056@0.0.1920.1056" timestamp="1590650870256" />
-    <state x="674" y="95" width="563" height="881" key="#com.intellij.ide.util.MemberChooser" timestamp="1591631483335">
+    <state x="674" y="95" width="563" height="881" key="#com.intellij.ide.util.MemberChooser" timestamp="1592664862602">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state x="674" y="95" width="563" height="881" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1056@0.0.1920.1056" timestamp="1591631483335" />
+    <state x="674" y="95" width="563" height="881" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1056@0.0.1920.1056" timestamp="1592664862602" />
     <state x="676" y="414" width="568" height="243" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1590589563998">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
@@ -192,50 +213,54 @@
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
     <state x="696" y="299" width="991" height="637" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1920.1056@0.0.1920.1056" timestamp="1590589617675" />
+    <state x="0" y="0" width="1912" height="1056" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1592664688808">
+      <screen x="0" y="0" width="1920" height="1056" />
+    </state>
+    <state x="0" y="0" width="1912" height="1056" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1056@0.0.1920.1056" timestamp="1592664688808" />
     <state x="829" y="169" key="#xdebugger.evaluate" timestamp="1591631159561">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
     <state x="829" y="169" key="#xdebugger.evaluate/0.0.1920.1056@0.0.1920.1056" timestamp="1591631159561" />
-    <state width="697" height="901" key="DebuggerActiveHint" timestamp="1591866109569">
+    <state width="697" height="901" key="DebuggerActiveHint" timestamp="1592665865641">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="697" height="901" key="DebuggerActiveHint/0.0.1920.1056@0.0.1920.1056" timestamp="1591866109569" />
-    <state x="482" y="206" width="1074" height="794" key="FileChooserDialogImpl" timestamp="1591760111818">
+    <state width="697" height="901" key="DebuggerActiveHint/0.0.1920.1056@0.0.1920.1056" timestamp="1592665865641" />
+    <state x="482" y="206" width="1074" height="794" key="FileChooserDialogImpl" timestamp="1592662225534">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state x="482" y="206" width="1074" height="794" key="FileChooserDialogImpl/0.0.1920.1056@0.0.1920.1056" timestamp="1591760111818" />
-    <state width="1839" height="374" key="GridCell.Tab.0.bottom" timestamp="1591866958063">
+    <state x="482" y="206" width="1074" height="794" key="FileChooserDialogImpl/0.0.1920.1056@0.0.1920.1056" timestamp="1592662225534" />
+    <state width="1851" height="308" key="GridCell.Tab.0.bottom" timestamp="1592666089650">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1839" height="374" key="GridCell.Tab.0.bottom/0.0.1920.1056@0.0.1920.1056" timestamp="1591866958063" />
-    <state width="1839" height="374" key="GridCell.Tab.0.center" timestamp="1591866958061">
+    <state width="1851" height="308" key="GridCell.Tab.0.bottom/0.0.1920.1056@0.0.1920.1056" timestamp="1592666089650" />
+    <state width="1851" height="308" key="GridCell.Tab.0.center" timestamp="1592666089649">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1839" height="374" key="GridCell.Tab.0.center/0.0.1920.1056@0.0.1920.1056" timestamp="1591866958061" />
-    <state width="1839" height="374" key="GridCell.Tab.0.left" timestamp="1591866958060">
+    <state width="1851" height="308" key="GridCell.Tab.0.center/0.0.1920.1056@0.0.1920.1056" timestamp="1592666089649" />
+    <state width="1851" height="308" key="GridCell.Tab.0.left" timestamp="1592666089648">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1839" height="374" key="GridCell.Tab.0.left/0.0.1920.1056@0.0.1920.1056" timestamp="1591866958060" />
-    <state width="1839" height="374" key="GridCell.Tab.0.right" timestamp="1591866958063">
+    <state width="1851" height="308" key="GridCell.Tab.0.left/0.0.1920.1056@0.0.1920.1056" timestamp="1592666089648" />
+    <state width="1851" height="308" key="GridCell.Tab.0.right" timestamp="1592666089650">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1839" height="374" key="GridCell.Tab.0.right/0.0.1920.1056@0.0.1920.1056" timestamp="1591866958063" />
-    <state width="1839" height="534" key="GridCell.Tab.1.bottom" timestamp="1591866279055">
+    <state width="1851" height="308" key="GridCell.Tab.0.right/0.0.1920.1056@0.0.1920.1056" timestamp="1592666089650" />
+    <state width="1851" height="308" key="GridCell.Tab.1.bottom" timestamp="1592666089653">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1839" height="534" key="GridCell.Tab.1.bottom/0.0.1920.1056@0.0.1920.1056" timestamp="1591866279055" />
-    <state width="1839" height="534" key="GridCell.Tab.1.center" timestamp="1591866279055">
+    <state width="1851" height="308" key="GridCell.Tab.1.bottom/0.0.1920.1056@0.0.1920.1056" timestamp="1592666089653" />
+    <state width="1851" height="308" key="GridCell.Tab.1.center" timestamp="1592666089652">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1839" height="534" key="GridCell.Tab.1.center/0.0.1920.1056@0.0.1920.1056" timestamp="1591866279055" />
-    <state width="1839" height="534" key="GridCell.Tab.1.left" timestamp="1591866279055">
+    <state width="1851" height="308" key="GridCell.Tab.1.center/0.0.1920.1056@0.0.1920.1056" timestamp="1592666089652" />
+    <state width="1851" height="308" key="GridCell.Tab.1.left" timestamp="1592666089651">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1839" height="534" key="GridCell.Tab.1.left/0.0.1920.1056@0.0.1920.1056" timestamp="1591866279055" />
-    <state width="1839" height="534" key="GridCell.Tab.1.right" timestamp="1591866279055">
+    <state width="1851" height="308" key="GridCell.Tab.1.left/0.0.1920.1056@0.0.1920.1056" timestamp="1592666089651" />
+    <state width="1851" height="308" key="GridCell.Tab.1.right" timestamp="1592666089652">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
-    <state width="1839" height="534" key="GridCell.Tab.1.right/0.0.1920.1056@0.0.1920.1056" timestamp="1591866279055" />
+    <state width="1851" height="308" key="GridCell.Tab.1.right/0.0.1920.1056@0.0.1920.1056" timestamp="1592666089652" />
     <state x="645" y="445" width="621" height="182" key="ReplaceDuplicatesPrompt" timestamp="1591866743124">
       <screen x="0" y="0" width="1920" height="1056" />
     </state>
@@ -289,6 +314,21 @@
           <url>file://$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/CemQueryParamCfg.java</url>
           <line>79</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/objectalgebra/QueryBuilder.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/objectalgebra/QueryBuilder.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/asiainfo/cem/satisfaction/Utils/TargetFIlterUtils/objectalgebra/QueryBuilder.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
